@@ -8,56 +8,65 @@ public class Spawner : MonoBehaviour
 {
 
     [SerializeField] private float timeToSpawn = 5f;
-    //[SerializeField] private float timer;
-    //private float localTimer;
+
     [SerializeField] private float spawnTimeReducer;
-    //private float timeSinceSpawn;
-    private float localTimSinceSpawn;
+       
+    private float basicTimeSinceSpawn;
+    private float specialTimeSinceSpawn;
+
+    private ObjectPool_Advanced objectPool;
     
-    
-    
-    private ObjectPool_Simple myObjectPool;
-    //public SelectionManager selectionManager; //reference to a manager to take variables from
+
+    [SerializeField] int slipperyNumber;
+    [SerializeField] int replicantNumber;
+
     public GameData gameData;
-
-
-    public event Action spawnEvent;
-
 
     
 
     // Start is called before the first frame update
     void Start()
     {
-        myObjectPool = FindObjectOfType<ObjectPool_Simple>();
-        //localTimer = timer;
-
+        objectPool = FindObjectOfType<ObjectPool_Advanced>();
         
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if (KnockUI.HeKnocked)
-        { //timeSinceSpawn += Time.deltaTime;
-            localTimSinceSpawn += Time.deltaTime;
+        { 
+            basicTimeSinceSpawn += Time.deltaTime;
+            specialTimeSinceSpawn += Time.deltaTime;
 
-
-            if (localTimSinceSpawn > timeToSpawn)
+            if (basicTimeSinceSpawn > timeToSpawn)
             {
-                SpawnFromThisPoint();
+                SpawnFromThisPoint(objectPool.basicPefab);  //logic of spawning different enemies at diff time = maybe there's need in another script - monster randomizer                                                                                                                                          
 
-                localTimSinceSpawn = 0f;
+                basicTimeSinceSpawn = 0f;
             }
             //Debug.Log(timeToSpawn);
+
+            if (gameData.firstStageOn)
+            {
+                if (specialTimeSinceSpawn > timeToSpawn * 2)
+                {
+                    SpawnFromThisPoint(objectPool.slipperyPefab);
+                    specialTimeSinceSpawn = 0f;
+                }
+            }
+            else if (gameData.secondStageOn)
+            {
+                if (specialTimeSinceSpawn > timeToSpawn * 4)
+                {
+                    SpawnFromThisPoint(objectPool.replicantPefab);                                       
+                    specialTimeSinceSpawn = 0f;
+                }
+            }
         }
     }
-
-    private void LateUpdate()
-    {
-        
-       
-    }
+     
     private void SpawnSpeedUpdate()
     {
         if (timeToSpawn > 0.2)
@@ -70,14 +79,14 @@ public class Spawner : MonoBehaviour
     }
 
 
-    public void SpawnFromThisPoint()
+    public void SpawnFromThisPoint(GameObject prefab)
     {
-                GameObject newObject = myObjectPool.GetMyObject();
-                Vector3 newSpawnPoint = new Vector3(0, 0, 0);
+                GameObject newObject = objectPool.GetObject(prefab);
+                Vector2 newSpawnPoint = new Vector2(0, 0);
 
                 gameData.enemyNum += 1;
 
-                if (spawnEvent != null) spawnEvent(); // EVENT TRIGGER  spawnEvent()
+                EventManager.TriggerEvent("spawnEvent"); // EVENT TRIGGER  spawnEvent()
 
                 //Debug.Log("spaawn and triggered" + gameData.enemyNum);
 

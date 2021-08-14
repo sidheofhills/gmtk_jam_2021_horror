@@ -14,6 +14,8 @@ public class GameData : ScriptableObject
     public float speed = 1;
     public float scaleMult = 1;
     public float startingScale;
+    public float deathScale = 0.8f;
+    public float boxColliderExpandValue = 1.5f;
 
     [HideInInspector] public bool firstStageOn;
     [HideInInspector] public bool secondStageOn;

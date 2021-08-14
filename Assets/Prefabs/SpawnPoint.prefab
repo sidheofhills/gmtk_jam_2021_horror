@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToSpawn: 0.75
-  timer: 3
   spawnTimeReducer: 0.015
+  slipperyNumber: 10
+  replicantNumber: 3
   gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}

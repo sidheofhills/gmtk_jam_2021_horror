@@ -45,7 +45,7 @@ public class ChangingEnemyBehaviorOverTime : MonoBehaviour
     {
         for (int i = 0; i < numberOfReplicants; i++)
         {
-            spawner.SpawnFromThisPoint();
+            //spawner.SpawnFromThisPoint();
            
             
 

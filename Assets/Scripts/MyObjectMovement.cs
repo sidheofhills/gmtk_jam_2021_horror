@@ -6,64 +6,65 @@ using System;
 public class MyObjectMovement : MonoBehaviour
 {
    
-
-    private Vector3 objectPosition;
+    [SerializeField] private GameData gameData;
+    private bool startMoving;
     
-    private ObjectPool_Simple myObjectPool;
-    public GameData gameData;
-    
-
-   
 
     // Start is called before the first frame update
-    void Start()
-    {
-        FindObjectOfType<Spawner>().spawnEvent += StartMoving;
-     
+    void Awake()
+    {        
+        startMoving = false;
     }
 
     private void OnEnable()
     {
-        transform.localScale = new Vector3(gameData.startingScale, gameData.startingScale, gameData.startingScale);
+        
+        transform.localScale = new Vector3(gameData.startingScale, gameData.startingScale, 1);
+        EventManager.StartListening("spawnEvent", StartMoving);
+        
     }
  
     // Update is called once per frame
     void Update()
     {
-        StartMoving();
+       
+        if (startMoving)
+        {
+            Movement();
+        }
+        
+        if(transform.localScale.x>gameData.deathScale)
+        {
+            
+            EventManager.TriggerEvent("gameOverEvent");
+        }
     }
 
     private void StartMoving()
     {
-        Movement();
+        startMoving = true;
+        
     }
     private void Movement()
     {
-        Vector3 camDir = Camera.main.transform.forward;
         
-        this.transform.position += camDir * gameData.speed * Time.deltaTime;
 
-        float newScaleComponents = 1 / Vector3.Distance(camDir, transform.position);
-        transform.localScale += new Vector3(newScaleComponents, newScaleComponents, newScaleComponents) * gameData.scaleMult;
+        float newScaleComponents = (Time.deltaTime * gameData.scaleMult);
+        transform.localScale += new Vector3(newScaleComponents, newScaleComponents,0);
 
 
-        FindObjectOfType<Spawner>().spawnEvent -= Movement;
+        
     }
 
 
-    private void OnTriggerEnter(Collider other)
+ 
+    private void OnDisable()
     {
-        Debug.Log("i've entered a border" + other.tag+ other.CompareTag("border"));
+        EventManager.StopListening("spawnEvent", StartMoving);
+        startMoving = false;
 
-        if (other.CompareTag("border"))
-        {
-            this.gameObject.SetActive(false);
-
-        }
     }
-
-
-
+    
 
 }
 

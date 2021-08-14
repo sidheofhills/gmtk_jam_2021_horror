@@ -9,32 +9,29 @@ public class MyObjectReturn : MonoBehaviour
 
     // Start is called before the first frame update
     
-    private ObjectPool_Simple myObjectPool;
+    private ObjectPool_Advanced objectPool;
     public GameData gameData;
 
 
     void Start()
     {
-        myObjectPool = FindObjectOfType<ObjectPool_Simple>();
+        objectPool = FindObjectOfType<ObjectPool_Advanced>();
         
-    }
-
-    private void Update()
-    {
 
     }
+
 
 
     private void OnDisable()  //частный способ как его вернуть. в моем случае он выключается при клике, а потом возвращается в пул
     {
 
        
-        if (myObjectPool != null)
+        if (objectPool != null)
         {
-            myObjectPool.ReturnMyObject(this.gameObject);
+            objectPool.ReturnGameObject(this.gameObject);
             gameData.enemyNum -= 1;
 
-            Debug.Log("onEvwmyDisabled" + gameData.enemyNum + gameData.selectedObject);
+            Debug.Log("onEvwmyDisabled" + gameData.enemyNum + gameData.selectedObject.name);
         }
         
     }

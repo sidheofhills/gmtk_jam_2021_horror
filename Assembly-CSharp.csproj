@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\archive\SpawnNightmares.cs" />
     <Compile Include="Assets\Scripts\FitFunction.cs" />
     <Compile Include="Assets\Scripts\ClockUI.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool_Advanced.cs" />
     <Compile Include="Assets\Scripts\Data\GameData.cs" />
     <Compile Include="Assets\Scripts\behaviours\MonsterParentClass.cs" />
     <Compile Include="Assets\Graphics\proto_art\Scripts\PositionRendererSorter.cs" />
@@ -89,146 +90,146 @@
     <Compile Include="Assets\Scripts\archive\Nightmares.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
-    <None Include="Assets\Ludiq\Bolt\Documentation\0. READ ME FIRST.txt" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Bolt\Documentation\0. READ ME FIRST.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.xml" />
     <None Include="Assets\Fonts\Shadows_Into_Light\OFL.txt" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.Flow.Runtime.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Flow.Runtime.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Platforms.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\mscorlib.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Security.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Framework.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Core.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.Core.Editor.xml" />
-    <None Include="Assets\Ludiq\Assemblies\sqlite3.dll" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Routing.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.DirectoryServices.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Configuration.Install.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.Flow.Runtime.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Platforms.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\mscorlib.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Security.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Framework.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Core.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Core.Editor.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\sqlite3.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Routing.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.DirectoryServices.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Configuration.Install.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Flow.Runtime.xml" />
     <None Include="Assets\Fonts\Libre_Barcode_39_Extended_Text\OFL.txt" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.Core.Runtime.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Core.Runtime.xml" />
     <None Include="Assets\Fonts\Rock_Salt\LICENSE.txt" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Graphs.Runtime.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Graphs.Runtime.xml" />
     <None Include="Assets\Fonts\Finger_Paint\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Entity.Design.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.ServiceModel.Web.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Entity.Design.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.ServiceModel.Web.xml" />
     <None Include="Assets\Fonts\Amatic_SC\OFL.txt" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.State.Runtime.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.State.Runtime.xml" />
     <None Include="Assets\Fonts\DotGothic16\OFL.txt" />
     <None Include="Assets\Fonts\Nosifer\OFL.txt" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Entity.Design.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Core.Runtime.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.Core.Editor.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Entity.Design.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Core.Runtime.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Core.Editor.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\Ludiq\Assemblies\YamlDotNet.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\YamlDotNet.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Shaders\QuickOutline\Resources\Shaders\OutlineMask.shader" />
-    <None Include="Assets\Ludiq\Assemblies\MiscUtil.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Printing.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\MiscUtil.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Printing.xml" />
     <None Include="Assets\Install Bolt\README.txt" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.State.Editor.dll" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Management.Instrumentation.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Services.Client.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Services.Design.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.State.Editor.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Management.Instrumentation.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Services.Client.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Services.Design.xml" />
     <None Include="Assets\Fonts\Fredericka_the_Great\OFL.txt" />
     <None Include="Assets\Fonts\Waiting_for_the_Sunrise\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Runtime.Remoting.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.Flow.Editor.xml" />
-    <None Include="Assets\Ludiq\Bolt\LICENSES.txt" />
-    <None Include="Assets\Ludiq\Assemblies\MiscUtil.dll" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Graphs.Editor.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Xml.Linq.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Utilities.v3.5.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Conversion.v3.5.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Runtime.Remoting.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Flow.Editor.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Bolt\LICENSES.txt" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\MiscUtil.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Graphs.Editor.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Xml.Linq.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Utilities.v3.5.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Conversion.v3.5.xml" />
     <None Include="Assets\Fonts\Nothing_You_Could_Do\OFL.txt" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Core.Editor.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Management.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Configuration.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Core.Editor.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Management.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Configuration.xml" />
     <None Include="Assets\Fonts\Architects_Daughter\OFL.txt" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Messaging.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.AddIn.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Linq.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Graphs.Editor.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Messaging.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.AddIn.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Linq.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Graphs.Editor.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.DynamicData.Design.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.DynamicData.Design.xml" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Fonts\Zen_Loop\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\Ludiq\Assemblies\YamlDotNet.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\YamlDotNet.dll" />
     <None Include="Assets\Fonts\Dosis\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Core.Editor.dll" />
-    <None Include="Assets\Ludiq\Assemblies\Ionic.Zip.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.Core.Runtime.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Core.Editor.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ionic.Zip.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Core.Runtime.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\Fonts\New_Tegomin\OFL.txt" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.DynamicData.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.DynamicData.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Fonts\Cabin_Sketch\OFL.txt" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.ServiceProcess.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.ServiceProcess.xml" />
     <None Include="Assets\Fonts\Special_Elite\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Shaders\QuickOutline\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Fonts\Schoolbell\LICENSE.txt" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Platforms.dll" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.EnterpriseServices.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.IdentityModel.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.VisualC.STLCLR.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Platforms.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.EnterpriseServices.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.IdentityModel.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.VisualC.STLCLR.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Fonts\Libre_Barcode_39_Text\OFL.txt" />
     <None Include="Assets\Fonts\Love_Ya_Like_A_Sister\OFL.txt" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.ServiceModel.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.ServiceModel.xml" />
     <None Include="Assets\Fonts\ds_digital\DIGITAL.TXT" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Deployment.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Transactions.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Ionic.Zip.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Deployment.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Transactions.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ionic.Zip.dll" />
     <None Include="Assets\Fonts\Indie_Flower\OFL.txt" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Windows.Forms.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.Flow.Editor.dll" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Services.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Windows.Forms.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Flow.Editor.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Services.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.State.Runtime.dll" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.DataSetExtensions.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.State.Runtime.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.DataSetExtensions.xml" />
     <None Include="Assets\Fonts\Dosis\OFL.txt" />
-    <None Include="Assets\Ludiq\Assemblies\Bolt.State.Editor.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Runtime.Serialization.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Services.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.WorkflowServices.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.State.Editor.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Runtime.Serialization.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Services.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.WorkflowServices.xml" />
     <None Include="Assets\Fonts\Frijole\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.AddIn.Contract.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Core.Runtime.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.AddIn.Contract.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Core.Runtime.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Shaders\QuickOutline\Resources\Shaders\OutlineFill.shader" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.DirectoryServices.AccountManagement.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.DirectoryServices.AccountManagement.xml" />
     <None Include="Assets\Fonts\Gloria_Hallelujah\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Ludiq\Assemblies\Antlr3.Runtime.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Antlr3.Runtime.dll" />
     <None Include="Assets\Fonts\Tulpen_One\OFL.txt" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Runtime.Serialization.Formatters.Soap.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Entity.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.ComponentModel.DataAnnotations.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Abstractions.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Entity.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Drawing.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Runtime.Serialization.Formatters.Soap.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Entity.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.ComponentModel.DataAnnotations.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Abstractions.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Entity.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Drawing.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Net.xml" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.SqlXml.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Net.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.SqlXml.xml" />
     <None Include="Assets\Fonts\Permanent_Marker\LICENSE.txt" />
     <None Include="Assets\Fonts\East_Sea_Dokdo\OFL.txt" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.xml" />
     <None Include="Assets\Fonts\Press_Start_2P\OFL.txt" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Windows.Presentation.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Windows.Presentation.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Xml.xml" />
-    <None Include="Assets\Ludiq\Assemblies\Ludiq.Graphs.Runtime.dll" />
+    <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Xml.xml" />
+    <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Graphs.Runtime.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -454,49 +455,49 @@
       <HintPath>D:\unity\unity\Unity_Itself\2021.1.11f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.State.Editor">
-      <HintPath>Assets\Ludiq\Assemblies\Bolt.State.Editor.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Bolt.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Core.Editor">
-      <HintPath>Assets\Ludiq\Assemblies\Bolt.Core.Editor.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Bolt.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Graphs.Editor">
-      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Graphs.Editor.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Ludiq.Graphs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Core.Runtime">
-      <HintPath>Assets\Ludiq\Assemblies\Bolt.Core.Runtime.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Bolt.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Graphs.Runtime">
-      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Graphs.Runtime.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Ludiq.Graphs.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet">
-      <HintPath>Assets\Ludiq\Assemblies\YamlDotNet.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
-      <HintPath>Assets\Ludiq\Assemblies\Antlr3.Runtime.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip">
-      <HintPath>Assets\Ludiq\Assemblies\Ionic.Zip.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Flow.Editor">
-      <HintPath>Assets\Ludiq\Assemblies\Bolt.Flow.Editor.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Bolt.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Core.Editor">
-      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Core.Editor.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Ludiq.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Flow.Runtime">
-      <HintPath>Assets\Ludiq\Assemblies\Bolt.Flow.Runtime.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Bolt.Flow.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Platforms">
-      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Platforms.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Ludiq.Platforms.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Core.Runtime">
-      <HintPath>Assets\Ludiq\Assemblies\Ludiq.Core.Runtime.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Ludiq.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="MiscUtil">
-      <HintPath>Assets\Ludiq\Assemblies\MiscUtil.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\MiscUtil.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.State.Runtime">
-      <HintPath>Assets\Ludiq\Assemblies\Bolt.State.Runtime.dll</HintPath>
+      <HintPath>Assets\Prefabs\Ludiq\Assemblies\Bolt.State.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>

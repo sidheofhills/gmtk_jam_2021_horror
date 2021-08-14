@@ -22,11 +22,6 @@ public class SceneManager : MonoBehaviour
         //sceneLoaderListener = new Action(SceneLoader);
     }
 
-    private void Start()
-    {
-
-
-    }
 
     private void OnEnable()
     {
@@ -59,25 +54,7 @@ public class SceneManager : MonoBehaviour
 
 
     }
-    /*public void OnKeyboardInput()
-    { 
     
-    };*/
-
-    /*private void OnLevelWasLoaded(int level)
-    {
-        if (level == 1)
-        {
-            gameData.enemyNum = 0;
-            gameData.selectedObject = null;
-            Debug.Log("onLvlWasLoaded" + gameData.enemyNum + gameData.selectedObject);
-        }
-    }*/
-
-    /*private void LoadScene()
-    {
-        sce
-    }*/
 
 
     // здесь бы заменить на делегатов все

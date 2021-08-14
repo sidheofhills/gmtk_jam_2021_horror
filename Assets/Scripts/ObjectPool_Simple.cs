@@ -11,9 +11,7 @@ public class ObjectPool_Simple : MonoBehaviour
     [SerializeField] private int poolStartSize = 5;
     // Start is called before the first frame update
     void Start()
-    {
-
-        
+    {     
 
         for(int i = 0; i < poolStartSize; i++)
         {
@@ -24,12 +22,6 @@ public class ObjectPool_Simple : MonoBehaviour
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public GameObject GetMyObject()
     {

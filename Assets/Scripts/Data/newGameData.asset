@@ -15,5 +15,9 @@ MonoBehaviour:
   enemyNum: 0
   selectedObject: {fileID: 0}
   speed: 0.3
-  scaleMult: 0.0055
+  scaleMult: 0.01
   startingScale: 0.22
+  deathScale: 0.53
+  firstStageOn: 0
+  secondStageOn: 1
+  thirdStageOn: 0
