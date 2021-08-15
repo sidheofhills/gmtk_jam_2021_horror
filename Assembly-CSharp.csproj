@@ -96,6 +96,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.xml" />
     <None Include="Assets\Fonts\Shadows_Into_Light\OFL.txt" />
+    <None Include="Assets\Universal Sound FX\#Game Genre References\Platform.txt" />
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Flow.Runtime.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Platforms.xml" />
@@ -112,6 +113,7 @@
     <None Include="Assets\Fonts\Libre_Barcode_39_Extended_Text\OFL.txt" />
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Core.Runtime.xml" />
     <None Include="Assets\Fonts\Rock_Salt\LICENSE.txt" />
+    <None Include="Assets\Universal Sound FX\#Game Genre References\Shoot em Up.txt" />
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Graphs.Runtime.xml" />
     <None Include="Assets\Fonts\Finger_Paint\OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -151,6 +153,7 @@
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Management.xml" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Configuration.xml" />
     <None Include="Assets\Fonts\Architects_Daughter\OFL.txt" />
+    <None Include="Assets\Universal Sound FX\#Game Genre References\Fighting.txt" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Messaging.xml" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.AddIn.xml" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Linq.xml" />
@@ -166,8 +169,10 @@
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Core.Editor.dll" />
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Ionic.Zip.xml" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.xml" />
+    <None Include="Assets\Universal Sound FX\#Game Genre References\Real Time Stategy (RTS) Medieval.txt" />
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Bolt.Core.Runtime.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\Universal Sound FX\#Game Genre References\First Person Shooter (FPS).txt" />
     <None Include="Assets\Fonts\New_Tegomin\OFL.txt" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.DynamicData.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
@@ -180,13 +185,16 @@
     <None Include="Assets\Fonts\Schoolbell\LICENSE.txt" />
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Platforms.dll" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.EnterpriseServices.xml" />
+    <None Include="Assets\Universal Sound FX\#Game Genre References\Puzzle.txt" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.IdentityModel.xml" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.VisualC.STLCLR.xml" />
+    <None Include="Assets\Universal Sound FX\#Game Genre References\Physics.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Fonts\Libre_Barcode_39_Text\OFL.txt" />
     <None Include="Assets\Fonts\Love_Ya_Like_A_Sister\OFL.txt" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.ServiceModel.xml" />
     <None Include="Assets\Fonts\ds_digital\DIGITAL.TXT" />
+    <None Include="Assets\Universal Sound FX\#Game Genre References\8bit and Retro.txt" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Deployment.xml" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Transactions.xml" />
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Ionic.Zip.dll" />
@@ -224,8 +232,10 @@
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.SqlXml.xml" />
     <None Include="Assets\Fonts\Permanent_Marker\LICENSE.txt" />
     <None Include="Assets\Fonts\East_Sea_Dokdo\OFL.txt" />
+    <None Include="Assets\Universal Sound FX\#Game Genre References\Real Time Stategy (RTS) Sci-Fi.txt" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.xml" />
     <None Include="Assets\Fonts\Press_Start_2P\OFL.txt" />
+    <None Include="Assets\Universal Sound FX\version_history.txt" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Windows.Presentation.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Xml.xml" />
@@ -969,6 +979,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="FMODUnityResonanceEditor.csproj">
+      <Project>{401AC8DB-DF2E-456D-1155-48A2970CE5CD}</Project>
+      <Name>FMODUnityResonanceEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnity.csproj">
+      <Project>{6585DED8-AD60-8A1F-EEB6-5BA5C5A5DF19}</Project>
+      <Name>FMODUnity</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityEditor.csproj">
+      <Project>{CCA6CED5-54FE-8250-4499-D6F7B0116336}</Project>
+      <Name>FMODUnityEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityResonance.csproj">
+      <Project>{FE59B3A1-53EC-5FA8-93E7-7930168FA076}</Project>
+      <Name>FMODUnityResonance</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

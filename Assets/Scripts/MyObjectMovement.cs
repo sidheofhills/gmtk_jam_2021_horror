@@ -47,13 +47,10 @@ public class MyObjectMovement : MonoBehaviour
     }
     private void Movement()
     {
-        
-
         float newScaleComponents = (Time.deltaTime * gameData.scaleMult);
         transform.localScale += new Vector3(newScaleComponents, newScaleComponents,0);
 
 
-        
     }
 
 
