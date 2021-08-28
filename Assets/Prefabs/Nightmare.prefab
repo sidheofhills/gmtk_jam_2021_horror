@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8879717530499763705}
   - component: {fileID: 6477022913429448712}
   - component: {fileID: 2361183884471405362}
+  - component: {fileID: 6169898375123645350}
   m_Layer: 8
   m_Name: Nightmare
   m_TagString: enemy
@@ -121,6 +122,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdeefc0d44ca92641954cf1fc3e4f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
+--- !u!114 &6169898375123645350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803856328440208922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693a3f77f499f4b469cb8e825c71b422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
 --- !u!1 &1803856329322648918
 GameObject:
   m_ObjectHideFlags: 0

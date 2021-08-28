@@ -20,7 +20,7 @@ public class MyObjectMovement : MonoBehaviour
     {
         
         transform.localScale = new Vector3(gameData.startingScale, gameData.startingScale, 1);
-        EventManager.StartListening("spawnEvent", StartMoving);
+        EventManager.StartListening(gameData.MonsterSpawn, StartMoving);
         
     }
  
@@ -36,7 +36,7 @@ public class MyObjectMovement : MonoBehaviour
         if(transform.localScale.x>gameData.deathScale)
         {
             
-            EventManager.TriggerEvent("gameOverEvent");
+            EventManager.TriggerEvent(gameData.GameOver);
         }
     }
 
@@ -57,7 +57,7 @@ public class MyObjectMovement : MonoBehaviour
  
     private void OnDisable()
     {
-        EventManager.StopListening("spawnEvent", StartMoving);
+        EventManager.StopListening(gameData.MonsterSpawn, StartMoving);
         startMoving = false;
 
     }

@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 4186006837373076653}
   - component: {fileID: 358708363319313953}
   - component: {fileID: 5391184638093453656}
+  - component: {fileID: 3707399264590988520}
   m_Layer: 8
   m_Name: NightmareReplicant
   m_TagString: enemy
@@ -205,4 +206,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f1c2c5483774a4e91a66d4f42b415d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
   numberOfReplicants: 3
+--- !u!114 &3707399264590988520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5840625428516900670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693a3f77f499f4b469cb8e825c71b422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}

@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 
 public class Slippery : MonsterParentClass
 {
-    //private ObjectPool_Simple myObjectPool;
-    public GameData gameData;
+    
+    // gameData inherited from parent class
 
     private bool spectialBehaviourModOn;
     [SerializeField] private float localTimer = 0.2f;
@@ -51,6 +51,7 @@ public class Slippery : MonsterParentClass
     {
         //StartCoroutine(LerpToNewPosition());
         MoveByRandomVector();
+        
 
     }
 

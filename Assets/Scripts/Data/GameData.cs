@@ -21,5 +21,25 @@ public class GameData : ScriptableObject
     [HideInInspector] public bool secondStageOn;
     [HideInInspector] public bool thirdStageOn;
 
+    #region Events
+    
+    [HideInInspector] public string GameOver { get;  } = "gameOverEvent";        
+    [HideInInspector] public string GameWin { get; } = "gameWinEvent";    
+    [HideInInspector] public string GameStart { get; } = "gameLevelEvent";    
+    [HideInInspector] public string GameLeave { get; } = "gameLeaveEvent";    
+    [HideInInspector] public string MainMenu { get; } = "gameMenuEvent";     
+    [HideInInspector] public string Transition { get; } = "transitionEvent";     
+    [HideInInspector] public string Skip { get; } = "gameSkipEvent";     
+    [HideInInspector] public string MonsterSpawn { get; } = "monsterSpawnEvent";    
+    [HideInInspector] public string Attack { get; } = "attackEvent";     
+    [HideInInspector] public string MonsterDeath { get; } = "monsterDeathEvent";    
+    [HideInInspector] public string OnMinute { get; } = "onMinuteEvent";    
+    [HideInInspector] public string OnHour  { get; } = "onHourEvent";     
+    [HideInInspector] public string OnTwoMinutes { get; } = "onTwoMinutesEvent";
+
+    #endregion
+
+
+    
 
 }
