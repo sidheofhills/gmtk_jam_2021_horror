@@ -80,7 +80,7 @@
     <Compile Include="Assets\Scripts\archive\GameOverTrigger.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\MyObjectReturn.cs" />
     <Compile Include="Assets\Scripts\archive\OnBordersEnter.cs" />
-    <Compile Include="Assets\Scripts\Managers\Audio\AudioTitle.cs" />
+    <Compile Include="Assets\Scripts\archive\AudioTitle.cs" />
     <Compile Include="Assets\Scripts\behaviours\Replicant.cs" />
     <Compile Include="Assets\Scripts\archive\SpawnNightmares.cs" />
     <Compile Include="Assets\Scripts\FitFunction.cs" />
@@ -93,6 +93,7 @@
     <Compile Include="Assets\Graphics\proto_art\Scripts\PositionRendererSorter.cs" />
     <Compile Include="Assets\Scripts\UI\SwitcherUI.cs" />
     <Compile Include="Assets\Scripts\archive\SlipperyMod.cs" />
+    <Compile Include="Assets\Scripts\Managers\Audio\AudioClips.cs" />
     <Compile Include="Assets\Scripts\archive\Nightmares.cs" />
   </ItemGroup>
   <ItemGroup>

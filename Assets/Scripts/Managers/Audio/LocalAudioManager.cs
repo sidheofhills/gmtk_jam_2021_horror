@@ -5,20 +5,25 @@ using UnityEngine;
 public class LocalAudioManager : MonoBehaviour
 {
     [SerializeField] private GameData gameData;
-    
+    [SerializeField] private AudioClips audioClips;
+    [SerializeField] private AudioSource localAudioSource;
+    private void Start()
+    { 
+        
+    }
 
     private void MonsterSpawn()
     {
-        AudioPlayer.audioPlayerInstance.PlayAudio(AudioTitle.monsterSpawning);
+        AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.monsterSpawning, localAudioSource);
     }
 
     private void MonsterDeath()
     {
-        AudioPlayer.audioPlayerInstance.PlayAudio(AudioTitle.monsterDying);
+        AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.monsterDying, localAudioSource);
     }
     private void Attack()
     {
-        AudioPlayer.audioPlayerInstance.PlayAudio(AudioTitle.attack);
+        AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.attack, localAudioSource);  //PREFAB GUNS OBJECT POOLING UNDER PLAYER OBJECT
     }
 
 

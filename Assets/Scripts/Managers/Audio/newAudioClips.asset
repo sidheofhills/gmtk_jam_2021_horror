@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67861d39272dc240aeaca85d97d8095, type: 3}
+  m_Name: newAudioClips
+  m_EditorClassIdentifier: 
+  mainMenuMusic:
+  - {fileID: 8300000, guid: 98e7138dedb12a4439b345ccbc094095, type: 3}
+  mainLevelMusic:
+  - {fileID: 8300000, guid: cef6a260ff0f264439b9188d9a601974, type: 3}
+  gameOverMenuMusic:
+  - {fileID: 8300000, guid: cf0dd0e88b1cf464c8265f8cce779f7b, type: 3}
+  gameWinMenuMusic:
+  - {fileID: 8300000, guid: 15f03cf6717715a40ad296116a4b2d8c, type: 3}
+  lightBulbsFlickering:
+  - {fileID: 8300000, guid: b86c7a2340dedd7489dadae67864f33b, type: 3}
+  - {fileID: 8300000, guid: b31ec43f2494cf241a923a03ad3d67d9, type: 3}
+  - {fileID: 8300000, guid: 60dd3567669a975449a06b4d132794ad, type: 3}
+  thunder:
+  - {fileID: 8300000, guid: 863ad7f426a8a7f42aacb5e7ed7caa71, type: 3}
+  knocking:
+  - {fileID: 8300000, guid: da5dc42f16699764eab92b5aa0540d8f, type: 3}
+  lightSwitcher:
+  - {fileID: 8300000, guid: 3dccc6b2bef8a7941b7d3f0ed9bcd909, type: 3}
+  transitionToMainLevel:
+  - {fileID: 8300000, guid: e31a84ba8a270b54187e536cde2ce20d, type: 3}
+  transitionToExit:
+  - {fileID: 8300000, guid: 431e2c75f6c9aa340b8c3e9753b722aa, type: 3}
+  monsterSpawning:
+  - {fileID: 8300000, guid: 980ff23f42c8d2f4db7d3a9a3e23fc30, type: 3}
+  - {fileID: 8300000, guid: 5c52e80d9bb1e624b903f29a9517d2f3, type: 3}
+  - {fileID: 8300000, guid: 2252ac27f11531a49add0865dbace8e4, type: 3}
+  monsterDying:
+  - {fileID: 8300000, guid: 88d002ef6b4e829469a3192e98c17999, type: 3}
+  - {fileID: 8300000, guid: b5009f88b9bc4414292eeb316acceb07, type: 3}
+  - {fileID: 8300000, guid: 2be8d6372e983ea47a76434091ad434e, type: 3}
+  - {fileID: 8300000, guid: 81faac2cdc2fc364b8104d77dba05344, type: 3}
+  - {fileID: 8300000, guid: 7116f96bdb54743468cd526b8fdeba6f, type: 3}
+  attack:
+  - {fileID: 8300000, guid: 49fd728b0888f66408f861e03ecc8349, type: 3}
+  - {fileID: 8300000, guid: e7f2598efd44be34cbb85b9f0f1d90d4, type: 3}
+  - {fileID: 8300000, guid: 04663043d4d2f2e4ba0923d361a7fd00, type: 3}
+  - {fileID: 8300000, guid: eac663c11fe2b404bbc911867d59b345, type: 3}
+  buttonHighlighted:
+  - {fileID: 8300000, guid: 045b37413283f834097c32b2579294ca, type: 3}
+  buttonClicked:
+  - {fileID: 8300000, guid: ad27ecb43ab3db94ba80fc32921218a4, type: 3}
+  message:
+  - {fileID: 8300000, guid: f44afeeb7aa0da447b017aa273949881, type: 3}
+  musicVolume: 1
+  sfxVolumne: 1
