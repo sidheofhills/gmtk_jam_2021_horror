@@ -7,13 +7,13 @@ public class Replicant : MonsterParentClass
     [SerializeField] private int numberOfReplicants = 3;
     
     private Spawner spawner;
-    private ObjectPool_Advanced objectPool;
+    [SerializeField] private GameObject slipperyPefab;
 
     private void Awake()
     {
         
         spawner = FindObjectOfType<Spawner>();
-        objectPool = FindObjectOfType<ObjectPool_Advanced>();
+        
     }
 
     private void OnMouseDown()
@@ -25,7 +25,7 @@ public class Replicant : MonsterParentClass
     {
         for (int i = 0; i < numberOfReplicants; i++)
         {
-            spawner.SpawnFromThisPoint(objectPool.slipperyPefab);
+            spawner.SpawnFromThisPoint(slipperyPefab);
         }
         ClickToDeath();
         Debug.Log("basic mod done");

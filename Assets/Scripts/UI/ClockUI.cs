@@ -27,6 +27,7 @@ public class ClockUI : MonoBehaviour
         Debug.Log(TimeManager.Hour + "HourUnsubsc");
     }
 
+    
 
     private void SetInitialTime()
     {

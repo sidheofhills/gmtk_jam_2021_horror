@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,6 +1391,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 291182010077608044, guid: 727c35be5f3606c4eb0d20ebd72a9b25,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1803856328440208922, guid: 727c35be5f3606c4eb0d20ebd72a9b25,
         type: 3}
       propertyPath: m_Name
@@ -1814,7 +1819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c132d4beed8fc4f8308f12bce63a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 0}
+  gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
   timeText: {fileID: 1526365122}
 --- !u!114 &911121698
 MonoBehaviour:
@@ -2150,12 +2155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e56ed49adc89614ca65048444939cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicPefab: {fileID: 1803856328440208922, guid: 727c35be5f3606c4eb0d20ebd72a9b25,
-    type: 3}
-  slipperyPefab: {fileID: 883184101411348928, guid: 34598fd933f59c947bd263b80e659114,
-    type: 3}
-  replicantPefab: {fileID: 5840625428516900670, guid: 4390a3438f6ade5408b3a5cba8bc4f85,
-    type: 3}
 --- !u!1001 &1121539952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2397,7 +2396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSide: {fileID: 417198075}
   rightSide: {fileID: 339344496}
-  container: {fileID: 0}
+  container: {fileID: 838557862}
 --- !u!1 &1318378366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,6 +3121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
+  audioClips: {fileID: 0}
   audioPlayer: {fileID: 1947842630}
   bgAudioSource: {fileID: 936132990}
   envAudioSource: {fileID: 27208562}

@@ -7,26 +7,72 @@ public class LocalAudioManager : MonoBehaviour
     [SerializeField] private GameData gameData;
     [SerializeField] private AudioClips audioClips;
     [SerializeField] private AudioSource localAudioSource;
+    
+
+    private enum LocalStates
+    {
+        None,
+        MonsterSpawn,
+        MonsterDeath,
+        Attack,
+    }
+
+    private LocalStates currentState;
     private void Start()
-    { 
+    {
+        currentState = LocalStates.None;
         
     }
 
     private void MonsterSpawn()
     {
-        AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.monsterSpawning, localAudioSource);
+        currentState = LocalStates.MonsterSpawn;
     }
 
     private void MonsterDeath()
     {
-        AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.monsterDying, localAudioSource);
+        currentState = LocalStates.MonsterDeath;
     }
     private void Attack()
     {
-        AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.attack, localAudioSource);  //PREFAB GUNS OBJECT POOLING UNDER PLAYER OBJECT
+        currentState = LocalStates.Attack;
     }
 
+    private void Update()
+    {
+        
+        LocalAudioPlayer(currentState);
+        
+    }
+    private void LocalAudioPlayer(LocalStates _localState)
+    {
+        switch(_localState)
+        {
+            case LocalStates.MonsterSpawn:
+                {
+                    AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.monsterSpawning, localAudioSource);
+                    Debug.Log("monster spawn in local audio manager" + audioClips.monsterSpawning[0] + " " + localAudioSource.name);
+                    break;
+                }
+            case LocalStates.MonsterDeath:
+                {
+                    AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.monsterDying, localAudioSource);
+                    break;
+                }
+            case LocalStates.Attack:
+                {
+                    AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.attack, localAudioSource);  //PREFAB GUNS OBJECT POOLING UNDER PLAYER OBJECT
+                    break;
+                }
+            case LocalStates.None:
+                {
+                    break;
+                }
 
+        }
+        _localState = LocalStates.None;
+        
+    }
 
 
     private void OnEnable()

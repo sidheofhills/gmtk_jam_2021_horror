@@ -3,7 +3,10 @@ guid: d9f1c2c5483774a4e91a66d4f42b415d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
+  - slipperyPefab: {fileID: 883184101411348928, guid: 34598fd933f59c947bd263b80e659114,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -31,16 +31,17 @@ public class AudioPlayer : MonoBehaviour
         {
             audioPlayerInstance = this;
             
-        }
-        
-        
+        }               
     }
-       
+
+    
+
     #endregion
 
     #region Public Functions for AudioManager to use
     public void PlayAudio(AudioClip[] _audioClip, AudioSource _audioSource, bool _fade = false)
     {
+        Log("im in audioplayer");
         AudioJob(AudioAction.Start, _audioClip, _audioSource, _fade);
     }
 
@@ -61,23 +62,27 @@ public class AudioPlayer : MonoBehaviour
         float targetValue = audioVolume;
         AudioClip clip= ChooseRandomClip(_clip);
         _source.clip = clip;
+        Log("add job "+ _action +" " +_source.clip.name);
 
         switch (_action)
         {
             case AudioAction.Start:
             {
                     _source.Play();
+                    Log("play " + _source.clip);
                     break;
             }
             case AudioAction.Stop:
                 {
                     _source.Stop();
+                    Log("stop " + _source.clip);
                     break;
                 }
 
             case AudioAction.Restart:
                 _source.Stop();
                 _source.Play();
+                Log("reastart " + _source.clip);
                 break;
         }
         if (_fade)
@@ -87,7 +92,7 @@ public class AudioPlayer : MonoBehaviour
                 initialValue = audioVolume;
                 targetValue = 0.0f;
             }
-            float volume;
+            
             float timePassed = 0.0f;
             float lerpDuration = 1.0f;
             while (timePassed <= lerpDuration)

@@ -46,14 +46,14 @@ public class EventManager : MonoBehaviour
 
             instanceEventManager.eventDictionary[eventName] += listener; // add more events to the existing one
                                                                          //update the dictionary
-            Debug.Log("subscribed" + eventName);
+            //Debug.Log("subscribed" + eventName);
             }
         
         else //when dictionary is fresh and new
         {
                        
             instanceEventManager.eventDictionary.Add(eventName, listener);
-            Debug.Log("subscribed new" + eventName);
+            //Debug.Log("subscribed new" + eventName);
         }
     }
 
@@ -65,7 +65,7 @@ public class EventManager : MonoBehaviour
 
             instanceEventManager.eventDictionary[eventName] -= listener; // substract more events from the existing one
                                                                          //update the dictionary
-            Debug.Log("unsubscribed" + eventName);
+            //Debug.Log("unsubscribed" + eventName);
         }
     }
 

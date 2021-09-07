@@ -9,5 +9,6 @@ public class MonsterParentClass : MonoBehaviour
     {
         EventManager.TriggerEvent(gameData.MonsterDeath);
         this.gameObject.SetActive(false);
+        
     }
 }

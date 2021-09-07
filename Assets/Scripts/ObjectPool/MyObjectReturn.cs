@@ -30,8 +30,7 @@ public class MyObjectReturn : MonoBehaviour
         {
             objectPool.ReturnGameObject(this.gameObject);
             gameData.enemyNum -= 1;
-
-            Debug.Log("onEvwmyDisabled" + gameData.enemyNum + gameData.selectedObject.name);
+            
         }
         
     }

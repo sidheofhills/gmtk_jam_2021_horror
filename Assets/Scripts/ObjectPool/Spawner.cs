@@ -15,7 +15,11 @@ public class Spawner : MonoBehaviour
     private float specialTimeSinceSpawn;
 
     private ObjectPool_Advanced objectPool;
-    
+
+    //public for them to be taken elsewhere 
+    [SerializeField] private GameObject basicPefab;
+    [SerializeField] private GameObject slipperyPefab;
+    [SerializeField] private GameObject replicantPefab;
 
     [SerializeField] int slipperyNumber;
     [SerializeField] int replicantNumber;
@@ -28,7 +32,14 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         objectPool = FindObjectOfType<ObjectPool_Advanced>();
-        
+        if (objectPool)
+        {
+            Debug.Log(objectPool.name);
+        }
+        else
+        {
+            Debug.Log("No game object called ObjectPool_Advanced found");
+        }
 
     }
 
@@ -42,7 +53,7 @@ public class Spawner : MonoBehaviour
 
             if (basicTimeSinceSpawn > timeToSpawn)
             {
-                SpawnFromThisPoint(objectPool.basicPefab);  //logic of spawning different enemies at diff time = maybe there's need in another script - monster randomizer                                                                                                                                          
+                SpawnFromThisPoint(basicPefab);  //logic of spawning different enemies at diff time = maybe there's need in another script - monster randomizer                                                                                                                                          
 
                 basicTimeSinceSpawn = 0f;
             }
@@ -52,7 +63,7 @@ public class Spawner : MonoBehaviour
             {
                 if (specialTimeSinceSpawn > timeToSpawn * 2)
                 {
-                    SpawnFromThisPoint(objectPool.slipperyPefab);
+                    SpawnFromThisPoint(slipperyPefab);
                     specialTimeSinceSpawn = 0f;
                 }
             }
@@ -60,13 +71,12 @@ public class Spawner : MonoBehaviour
             {
                 if (specialTimeSinceSpawn > timeToSpawn * 4)
                 {
-                    SpawnFromThisPoint(objectPool.replicantPefab);                                       
+                    SpawnFromThisPoint(replicantPefab);                                       
                     specialTimeSinceSpawn = 0f;
                 }
             }
         }
     }
-     
     private void SpawnSpeedUpdate()
     {
         if (timeToSpawn > 0.2)
@@ -75,42 +85,44 @@ public class Spawner : MonoBehaviour
             Debug.Log("reduced spawnTime, now it is" + timeToSpawn);
         }
         else return;  //тут враги вызываются с минимальным интервалом
-        
+
     }
 
 
     public void SpawnFromThisPoint(GameObject prefab)
     {
-                GameObject newObject = objectPool.GetObject(prefab);
-                Vector2 newSpawnPoint = new Vector2(0, 0);
+        GameObject newObject = objectPool.GetObject(prefab);
+        Vector2 newSpawnPoint = new Vector2(0, 0);
 
-                gameData.enemyNum += 1;
+        gameData.enemyNum += 1;
 
-                EventManager.TriggerEvent(gameData.MonsterSpawn); // EVENT TRIGGER  spawnEvent()
+        EventManager.TriggerEvent(gameData.MonsterSpawn); // EVENT TRIGGER  spawnEvent()
 
-                //Debug.Log("spaawn and triggered" + gameData.enemyNum);
+        Debug.Log("spaawn and triggered" + gameData.MonsterSpawn);
 
-                newSpawnPoint = this.transform.position + UnityEngine.Random.insideUnitSphere * 2;
+        newSpawnPoint = this.transform.position + UnityEngine.Random.insideUnitSphere * 2;
 
-                newObject.transform.position = newSpawnPoint;
-                
-        
+        newObject.transform.position = newSpawnPoint;
+
+
 
     }
-    
-    
+
+
 
 
     #region Events Functions Enable/Disable
     private void OnEnable()
     {
         EventManager.StartListening(gameData.OnTwoMinutes, SpawnSpeedUpdate);
-        
+
     }
     private void OnDisable()
     {
         EventManager.StopListening(gameData.OnTwoMinutes, SpawnSpeedUpdate);
-        
+
     }
     #endregion
 }
+
+

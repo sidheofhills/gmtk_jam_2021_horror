@@ -7,10 +7,6 @@ public class ObjectPool_Advanced : MonoBehaviour
     private Dictionary<string, Queue<GameObject>> objectPool = new Dictionary<string, Queue<GameObject>>();  //create and initialize dictionary
 
 
-    //public for them to be taken elsewhere 
-    public GameObject basicPefab;
-    public GameObject slipperyPefab;
-    public GameObject replicantPefab;
 
     public GameObject GetObject(GameObject gameObject)
     {
@@ -18,6 +14,7 @@ public class ObjectPool_Advanced : MonoBehaviour
         {
             if(objectList.Count==0)
             {
+                
                 return CreateNewObject(gameObject);
             }
             else
@@ -31,6 +28,7 @@ public class ObjectPool_Advanced : MonoBehaviour
         }
         else
         {
+            
             return CreateNewObject(gameObject);
         }
     }
@@ -58,7 +56,7 @@ public class ObjectPool_Advanced : MonoBehaviour
             objectPool.Add(gameObject.name, newObjectQueue);
             Debug.Log("enqueue new object" + gameObject.name);
         }
-        Debug.Log("object pool list" + objectList.Count);
+        //Debug.Log("object pool list" + objectList.Count);
         //gameObject.SetActive(false);
     }
 }

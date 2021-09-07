@@ -12,7 +12,7 @@ public class Slippery : MonsterParentClass
     [SerializeField] private float localTimer = 0.2f;
     // to new position variables
     private float timeElapsed;
-    [SerializeField] private float lerpDuration = 0.5f;
+    //[SerializeField] private float lerpDuration = 0.5f;
 
     private Rigidbody2D _rigidbody;
     private BoxCollider2D boxCollider2D;
