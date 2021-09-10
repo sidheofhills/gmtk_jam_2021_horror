@@ -11,6 +11,7 @@ public class GameData : ScriptableObject
     [Header("Main Variables")]
     public float enemyNum = 0;
     public GameObject selectedObject;
+    public Vector3 weaponSpawnTransform;
     public float speed = 1;
     public float scaleMult = 1;
     public float startingScale;

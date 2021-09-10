@@ -11,7 +11,7 @@ public class AudioPlayer : MonoBehaviour
     
     public bool debug = false;
 
-    public static float audioVolume = 1.0f;
+    
 
     
     public enum AudioAction
@@ -41,55 +41,56 @@ public class AudioPlayer : MonoBehaviour
     #region Public Functions for AudioManager to use
     public void PlayAudio(AudioClip[] _audioClip, AudioSource _audioSource, bool _fade = false)
     {
-        Log("im in audioplayer");
-        AudioJob(AudioAction.Start, _audioClip, _audioSource, _fade);
+        
+        StartCoroutine(AudioJob(AudioAction.Start, _audioClip, _audioSource, _fade));
     }
 
     public void StopAudio(AudioClip[] _audioClip, AudioSource _audioSource, bool _fade = false)
     {
-        AudioJob(AudioAction.Stop, _audioClip, _audioSource, _fade);
+        StartCoroutine(AudioJob(AudioAction.Stop, _audioClip, _audioSource, _fade));
     }
 
     public void RestartAudio(AudioClip[] _audioClip, AudioSource _audioSource, bool _fade = false)
     {
-        AudioJob(AudioAction.Restart, _audioClip, _audioSource, _fade);
+        StartCoroutine(AudioJob(AudioAction.Restart, _audioClip, _audioSource, _fade));
     }
 
 
     private IEnumerator AudioJob(AudioAction _action, AudioClip[] _clip, AudioSource _source, bool _fade = false)
-    { 
+    {
+         
         float initialValue = 0.0f;
-        float targetValue = audioVolume;
+        float targetValue = audioClips.musicVolume; 
         AudioClip clip= ChooseRandomClip(_clip);
         _source.clip = clip;
-        Log("add job "+ _action +" " +_source.clip.name);
+        //Log("add job "+ _action +" " +_source.clip.name);
 
         switch (_action)
         {
             case AudioAction.Start:
             {
                     _source.Play();
-                    Log("play " + _source.clip);
+                    //Log("play " + _source.clip);
                     break;
             }
             case AudioAction.Stop:
                 {
                     _source.Stop();
-                    Log("stop " + _source.clip);
+                    //Log("stop " + _source.clip);
                     break;
                 }
 
             case AudioAction.Restart:
                 _source.Stop();
                 _source.Play();
-                Log("reastart " + _source.clip);
+                //Log("reastart " + _source.clip);
                 break;
         }
         if (_fade)
         {
             if(_action == AudioAction.Stop)
             {
-                initialValue = audioVolume;
+                initialValue = audioClips.musicVolume;
                 targetValue = 0.0f;
             }
             

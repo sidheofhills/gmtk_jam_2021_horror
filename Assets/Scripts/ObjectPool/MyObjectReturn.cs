@@ -7,7 +7,6 @@ public class MyObjectReturn : MonoBehaviour
 {
     
 
-    // Start is called before the first frame update
     
     private ObjectPool_Advanced objectPool;
     public GameData gameData;

@@ -37,14 +37,14 @@ public class SelectionManager : MonoBehaviour
             RaycastHit2D hit;
             // Does the ray intersect any objects in nightmares layer
             hit = Physics2D.Raycast(camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, layerMask);  //ScreenToWorldPoint returns coords, ScreenPointToRay returns a ray
-            
+
             
 
             if (hit.collider != null &&!EventSystem.current.IsPointerOverGameObject())  //second bit is for UI black part
             {
                 gameData.selectedObject = hit.transform.gameObject;
-                EventManager.TriggerEvent(gameData.Attack);
-                Debug.Log(gameData.selectedObject);
+                
+                Debug.Log("sel obj " + gameData.selectedObject);
             }
             else
             {                

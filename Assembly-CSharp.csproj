@@ -69,7 +69,7 @@
     <Compile Include="Assets\Scripts\MyObjectMovement.cs" />
     <Compile Include="Assets\Scripts\Managers\InputManager.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\ObjectPool_Simple.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Spawner.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\MonsterSpawner.cs" />
     <Compile Include="Assets\Scripts\ChangingEnemyBehaviorOverTime.cs" />
     <Compile Include="Assets\Scripts\Managers\SelectionManager.cs" />
     <Compile Include="Assets\Scripts\behaviours\Slippery.cs" />
@@ -95,6 +95,9 @@
     <Compile Include="Assets\Scripts\archive\SlipperyMod.cs" />
     <Compile Include="Assets\Scripts\Managers\Audio\AudioClips.cs" />
     <Compile Include="Assets\Scripts\archive\Nightmares.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\MyWeaponReturn.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\WeaponSpawner.cs" />
+    <Compile Include="Assets\Scripts\behaviours\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />

@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &4789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,12 +150,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 693a3f77f499f4b469cb8e825c71b422, type: 3}
+  m_Script: {fileID: 11500000, guid: fbc74d6c3013a5a4b92961c030f3fc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponPefab: {fileID: 5546651714376661997, guid: 4d7d1c4c02156a44c9402d215df7f464,
+    type: 3}
   gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
-  audioClips: {fileID: 0}
-  localAudioSource: {fileID: 0}
 --- !u!4 &4790
 Transform:
   m_ObjectHideFlags: 0
@@ -210,7 +210,8 @@ AudioSource:
   m_GameObject: {fileID: 27208560}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -152204024608384442, guid: d1a193be45150ad4e8365c9342f2d6df,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -535,7 +536,8 @@ AudioSource:
   m_GameObject: {fileID: 146462445}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4587832493748101135, guid: d1a193be45150ad4e8365c9342f2d6df,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1181,7 +1183,8 @@ AudioSource:
   m_GameObject: {fileID: 509046628}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -280192312725279390, guid: d1a193be45150ad4e8365c9342f2d6df,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1899,7 +1902,8 @@ AudioSource:
   m_GameObject: {fileID: 936132988}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -280192312725279390, guid: d1a193be45150ad4e8365c9342f2d6df,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3107,7 +3111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips: {fileID: 11400000, guid: 85427a3c1b9bd15488bf9969a8c03344, type: 2}
-  debug: 1
+  debug: 0
 --- !u!114 &1947842631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3392,6 +3396,75 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &439111215812235803
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.25490013
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08073797
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -138.50633
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394675347626766580, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546651714376661997, guid: 4d7d1c4c02156a44c9402d215df7f464,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d7d1c4c02156a44c9402d215df7f464, type: 3}
 --- !u!1001 &730371402366223245
 PrefabInstance:
   m_ObjectHideFlags: 0

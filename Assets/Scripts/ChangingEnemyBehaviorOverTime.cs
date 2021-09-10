@@ -16,13 +16,13 @@ public class ChangingEnemyBehaviorOverTime : MonoBehaviour
     [SerializeField] private float lerpDuration = 0.5f;
 
     [SerializeField] private int numberOfReplicants = 3;
-    private Spawner spawner;
+    private MonsterSpawner spawner;
 
     private void Awake()
     {
         spectialBehaviourModOn = false;
         //myObjectPool = FindObjectOfType<ObjectPool_Simple>();
-        spawner = FindObjectOfType<Spawner>();
+        spawner = FindObjectOfType<MonsterSpawner>();
     }
 
 

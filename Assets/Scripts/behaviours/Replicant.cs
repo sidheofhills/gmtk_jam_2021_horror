@@ -6,13 +6,13 @@ public class Replicant : MonsterParentClass
 {
     [SerializeField] private int numberOfReplicants = 3;
     
-    private Spawner spawner;
+    private MonsterSpawner spawner;
     [SerializeField] private GameObject slipperyPefab;
 
     private void Awake()
     {
         
-        spawner = FindObjectOfType<Spawner>();
+        spawner = FindObjectOfType<MonsterSpawner>();
         
     }
 

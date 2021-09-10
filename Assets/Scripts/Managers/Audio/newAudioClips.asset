@@ -35,15 +35,15 @@ MonoBehaviour:
   transitionToExit:
   - {fileID: 8300000, guid: 431e2c75f6c9aa340b8c3e9753b722aa, type: 3}
   monsterSpawning:
-  - {fileID: 8300000, guid: 980ff23f42c8d2f4db7d3a9a3e23fc30, type: 3}
-  - {fileID: 8300000, guid: 5c52e80d9bb1e624b903f29a9517d2f3, type: 3}
-  - {fileID: 8300000, guid: 2252ac27f11531a49add0865dbace8e4, type: 3}
+  - {fileID: 8300000, guid: 63a629e872c03404d88f4139aa6d3d86, type: 3}
+  - {fileID: 8300000, guid: 54eec88b56ba82e47b830297a281701b, type: 3}
+  - {fileID: 8300000, guid: bd54dba557cb7f64b8c7cd1dbbce8fe4, type: 3}
+  - {fileID: 8300000, guid: db0f5e253a39af44e8f2bb69818c8e77, type: 3}
   monsterDying:
-  - {fileID: 8300000, guid: 88d002ef6b4e829469a3192e98c17999, type: 3}
-  - {fileID: 8300000, guid: b5009f88b9bc4414292eeb316acceb07, type: 3}
-  - {fileID: 8300000, guid: 2be8d6372e983ea47a76434091ad434e, type: 3}
-  - {fileID: 8300000, guid: 81faac2cdc2fc364b8104d77dba05344, type: 3}
-  - {fileID: 8300000, guid: 7116f96bdb54743468cd526b8fdeba6f, type: 3}
+  - {fileID: 8300000, guid: 348a116b536bfe74995bc2815da7b5a9, type: 3}
+  - {fileID: 8300000, guid: e917adad096a94c4e9a8f3790c586064, type: 3}
+  - {fileID: 8300000, guid: 930d0f5f52ba9b941be428689d886735, type: 3}
+  - {fileID: 8300000, guid: 81b233d972864cf4d9ac9b1b902980a1, type: 3}
   attack:
   - {fileID: 8300000, guid: 49fd728b0888f66408f861e03ecc8349, type: 3}
   - {fileID: 8300000, guid: e7f2598efd44be34cbb85b9f0f1d90d4, type: 3}

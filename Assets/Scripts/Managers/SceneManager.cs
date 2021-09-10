@@ -17,6 +17,7 @@ public class SceneManager : MonoBehaviour
     {
         gameData.enemyNum = 0;
         gameData.selectedObject = null;
+        gameData.weaponSpawnTransform = new Vector3(0,0,0);
         Debug.Log("awakeSceneMan" + gameData.enemyNum + gameData.selectedObject);
         onGameOverListener = new Action(OnGameOver);  //слушающий, чтобы запустить функцию
         //sceneLoaderListener = new Action(SceneLoader);
