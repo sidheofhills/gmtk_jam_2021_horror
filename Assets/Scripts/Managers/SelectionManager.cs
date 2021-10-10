@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class SelectionManager : MonoBehaviour
 {   
         public GameData gameData;
-    public Camera camera;
+    public new Camera camera;
 
     int layerMask;
     Rigidbody2D _rigidbody2D;

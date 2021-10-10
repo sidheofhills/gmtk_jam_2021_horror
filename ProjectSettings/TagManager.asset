@@ -6,8 +6,8 @@ TagManager:
   tags:
   - border
   - enemy
-  - collatoral
   - glass
+  - lamp
   layers:
   - Default
   - TransparentFX
@@ -18,8 +18,8 @@ TagManager:
   - 
   - 
   - Nightmares
-  - Furniture
-  - 
+  - Bg
+  - Lamps
   - 
   - 
   - 
