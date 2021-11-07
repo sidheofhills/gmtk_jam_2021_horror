@@ -70,13 +70,13 @@ public class AudioPlayer : MonoBehaviour
             case AudioAction.Start:
             {
                     _source.Play();
-                    //Log("play " + _source.clip);
+                    Log("play " + _source.clip);
                     break;
             }
             case AudioAction.Stop:
                 {
                     _source.Stop();
-                    //Log("stop " + _source.clip);
+                    Log("stop " + _source.clip);
                     break;
                 }
 
@@ -128,70 +128,6 @@ public class AudioPlayer : MonoBehaviour
             return (AudioClip)_audioClipArray[randomValue];
         }
     }
-
-
-    // RUN AUDIO JOB
-    /*
-    private IEnumerator RunAudioJob(AudioJob _job)
-
-    {
-        
-
-        _track.source.clip = ChooseRandomClip(_audioClipArray);
-        
-        float _initialValue =  0.0f;
-        float _targetValue  = audioVolume;
-        
-        switch (_job.action)
-        {
-            case AudioAction.Start:
-                _track.source.Play();
-                    break;
-
-            case AudioAction.Stop when (!_job.fade):
-                {
-                    _track.source.Stop();
-                }
-
-                break;
-            case AudioAction.Stop:
-                 _initialValue = audioVolume; 
-                 _targetValue = 0.0f;
-                break;
-
-            case AudioAction.Restart:
-                _track.source.Stop();
-                _track.source.Play();
-                break;
-
-        }
-        if(_job.fade)
-           {
-                float timePassed = 0.0f;
-                float lerpDuration = 1.0f;
-            while(timePassed<=lerpDuration)
-            {
-                _track.source.volume = Mathf.Lerp(_initialValue, _targetValue, timePassed / lerpDuration);
-                timePassed += Time.deltaTime;
-                yield return null;
-
-            }
-            // if _timer was 0.9999 and Time.deltaTime was 0.01 we would not have reached the target
-            // make sure the volume is set to the value we want
-            _track.source.volume = _targetValue;
-
-            if(_job.action == AudioAction.Stop)
-            {
-                _track.source.Stop();
-            }
-
-        }
-        //jobTable.Remove(_job.title);
-        Log("job removed. is [" + (_job.title) + "] playing?" + _track.source.isPlaying);
-        
-    }
-
-    */
 
 
     #endregion

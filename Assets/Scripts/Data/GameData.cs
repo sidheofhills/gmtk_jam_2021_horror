@@ -37,12 +37,11 @@ public class GameData : ScriptableObject
     [HideInInspector] public string OnMinute { get; } = "onMinuteEvent";    
     [HideInInspector] public string OnHour  { get; } = "onHourEvent";     
     [HideInInspector] public string OnTwoMinutes { get; } = "onTwoMinutesEvent";
-    
-    [HideInInspector] public string OnLampEnqueue { get; } = "onLampEnqueueEvent";
+    [HideInInspector] public string OnLampJobRun { get; } = "onLampJobRunEvent";
 
     #endregion
 
 
-    
+
 
 }

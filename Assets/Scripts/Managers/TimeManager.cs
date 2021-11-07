@@ -67,19 +67,19 @@ public class TimeManager : MonoBehaviour
         if (Minute >= firstStageTimer)  //minute is TMP better use handOnTimer 
         {
             gameData.firstStageOn = true;
-            if(Time.frameCount%24==0) Debug.Log("firstStageOn");
+            //if(Time.frameCount%24==0) Debug.Log("firstStageOn");
 
             if (Minute >= secondStageTimer)
             {
                 gameData.secondStageOn = true;
                 gameData.firstStageOn = false;
-                if (Time.frameCount % 24 == 0) Debug.Log("secondStageOn");
+                //if (Time.frameCount % 24 == 0) Debug.Log("secondStageOn");
 
                 if (Minute >= thirdStageTimer)
                 {
                     gameData.thirdStageOn = true;
                     gameData.secondStageOn = false;
-                    if (Time.frameCount % 24 == 0) Debug.Log("thirdStageOn");
+                    //if (Time.frameCount % 24 == 0) Debug.Log("thirdStageOn");
                 }
             }
 

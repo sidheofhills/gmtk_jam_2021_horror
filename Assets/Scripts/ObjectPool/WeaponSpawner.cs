@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WeaponSpawner : MonoBehaviour
 {
-    private ObjectPool_Advanced objectPool;
+    private MonsterObjectPool_Advanced objectPool;
 
     //public for them to be taken elsewhere 
     [SerializeField] private GameObject weaponPefab;
@@ -18,7 +18,7 @@ public class WeaponSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objectPool = FindObjectOfType<ObjectPool_Advanced>();
+        objectPool = FindObjectOfType<MonsterObjectPool_Advanced>();
         if (objectPool)
         {
             Debug.Log(objectPool.name);

@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public GameData gameData;
     [SerializeField] private AudioClips audioClips;
-    [SerializeField] private AudioPlayer audioPlayer;
+     private AudioPlayer audioPlayer;
     [SerializeField] private AudioSource bgAudioSource;
     [SerializeField] private AudioSource envAudioSource;
     [SerializeField] private AudioSource transAudioSource;
@@ -14,11 +14,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        
+        audioPlayer = GetComponent<AudioPlayer>();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        /*if (Input.GetKeyDown(KeyCode.R))
             audioPlayer.PlayAudio(audioClips.mainLevelMusic, bgAudioSource, true);
         if (Input.GetKeyDown(KeyCode.T))
             audioPlayer.StopAudio(audioClips.mainLevelMusic, bgAudioSource, true);
@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
             audioPlayer.RestartAudio(audioClips.mainLevelMusic, bgAudioSource);
         if (Input.GetKeyDown(KeyCode.I))
             audioPlayer.PlayAudio(audioClips.lightBulbsFlickering, envAudioSource);
-            //audioPlayer.PlayAudio(AudioTitle.transitionToExit);
+            //audioPlayer.PlayAudio(AudioTitle.transitionToExit);*/
     }
 
  
@@ -47,22 +47,15 @@ public class AudioManager : MonoBehaviour
         audioPlayer.PlayAudio(audioClips.transitionToMainLevel, transAudioSource, true);
     }
 
-    private void GameStart()
-    {
-        
-    }
-
+  
     private void SkipStart()  
     {
         
         audioPlayer.StopAudio(CurrentClipPrep(envAudioSource.clip), envAudioSource, true);
-        Playing();
+        
     }
 
-    private void Playing()
-    {
-        audioPlayer.PlayAudio(audioClips.mainLevelMusic, bgAudioSource, true);
-    }
+    
 
     private void GameWin()
     {
@@ -82,7 +75,7 @@ public class AudioManager : MonoBehaviour
     {
         EventManager.StartListening(gameData.GameOver, GameOver);
         EventManager.StartListening(gameData.MainMenu, MainMenu);
-        EventManager.StartListening(gameData.GameStart, GameStart);  //';;;;;;;;;;;;;; n/ny
+        
         EventManager.StartListening(gameData.GameWin, GameWin);
         EventManager.StartListening(gameData.Skip, SkipStart);  //ny
 
@@ -92,7 +85,7 @@ public class AudioManager : MonoBehaviour
     {
         EventManager.StopListening(gameData.GameOver, GameOver);
         EventManager.StopListening(gameData.MainMenu, MainMenu);
-        EventManager.StopListening(gameData.GameStart, GameStart);
+        
         EventManager.StopListening(gameData.GameWin, GameWin);
         EventManager.StopListening(gameData.Skip, SkipStart);
         Dispose();

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.EventSystems;
 
-public class SelectionManager : MonoBehaviour
+public class SelectionManager : MonoBehaviour // i guess it's obsolete
 {   
         public GameData gameData;
     public new Camera camera;

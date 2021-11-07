@@ -62,7 +62,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
   audioClips: {fileID: 11400000, guid: 85427a3c1b9bd15488bf9969a8c03344, type: 2}
-  localAudioSource: {fileID: 4938069146774519108}
 --- !u!82 &4938069146774519108
 AudioSource:
   m_ObjectHideFlags: 0
@@ -200,7 +199,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.9245283, g: 0.9068663, b: 0.80678177, a: 1}
   m_FlipX: 0

@@ -10,11 +10,14 @@ public class MonsterSpawner : MonoBehaviour
     [SerializeField] private float timeToSpawn = 5f;
 
     [SerializeField] private float spawnTimeReducer;
-       
+
+    [SerializeField] private bool leftSide;
+    public bool LeftSide => leftSide;
+
     private float basicTimeSinceSpawn;
     private float specialTimeSinceSpawn;
 
-    private ObjectPool_Advanced objectPool;
+    private MonsterObjectPool_Advanced objectPool;
 
     //public for them to be taken elsewhere 
     [SerializeField] private GameObject basicPefab;
@@ -31,7 +34,7 @@ public class MonsterSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objectPool = FindObjectOfType<ObjectPool_Advanced>();
+        objectPool = FindObjectOfType<MonsterObjectPool_Advanced>();
         if (objectPool)
         {
             Debug.Log(objectPool.name);

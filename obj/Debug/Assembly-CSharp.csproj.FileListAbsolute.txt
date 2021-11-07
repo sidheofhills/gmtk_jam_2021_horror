@@ -404,6 +404,3 @@ D:\unity\games\gmtk_jam_2021\gmtk_jam_2021_horror\Temp\Bin\Debug\Unity.ShaderGra
 D:\unity\games\gmtk_jam_2021\gmtk_jam_2021_horror\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\unity\games\gmtk_jam_2021\gmtk_jam_2021_horror\obj\Debug\Assembly-CSharp.dll
 D:\unity\games\gmtk_jam_2021\gmtk_jam_2021_horror\obj\Debug\Assembly-CSharp.pdb
-D:\unity\games\gmtk_jam_2021\gmtk_jam_2021_horror\Temp\Bin\Debug\nunit.framework.dll
-D:\unity\games\gmtk_jam_2021\gmtk_jam_2021_horror\Temp\Bin\Debug\unityplastic.dll
-D:\unity\games\gmtk_jam_2021\gmtk_jam_2021_horror\Temp\Bin\Debug\Unity.Plastic.Antlr3.Runtime.dll

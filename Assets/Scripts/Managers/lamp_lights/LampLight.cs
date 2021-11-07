@@ -4,37 +4,135 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(AudioSource))]
 public class LampLight : MonoBehaviour
 {
     
-    [FormerlySerializedAs("isLeftLamp")] [SerializeField] private bool leftLamp;      
+    [FormerlySerializedAs("isLeftLamp")] [SerializeField] private bool leftLamp;
+    [SerializeField] private GameData gameData;
+    [SerializeField] private AudioClips audioClips;
+    [SerializeField] private AudioClip[] lightBulbsNormal;  //unique for each lamp
     public bool LeftLamp => leftLamp;
-    public bool LightOn { get; set; }
+    public int LightOn { get; set; }
     public float TimeDuration { get; set; }
 
-    [SerializeField] private Shader[] shadersToChooseFrom;
-    public Shader[] ShadersToChooseFrom => shadersToChooseFrom;
-    public Shader CurrentShader { get; set; }
+    public bool Flickering { get; set; }
     
     private LightManager lightManager;
+    private AudioSource lightAudioSource;
+    private SpriteRenderer[] spriteRenderer;
+    private AudioSpectrum audioSpectrum;
+    private Color lightColor;
+    private Color shadowColor;
+    public float testAlpha;
 
-    private void Start()
+    private void Awake()
     {
         lightManager = FindObjectOfType<LightManager>();
-        this.gameObject.SetActive(false);
-    }
 
-    private void OnEnable()
-    {
-        StartCoroutine(WhenLightIsOn()); 
-    }
+        lightAudioSource = GetComponent<AudioSource>();
+        if (lightAudioSource)
+        {
+            Debug.Log(lightAudioSource.name + this.gameObject.name);
+        }
+        else
+        {
+            Debug.Log("No game object called lightAudioSource found in " + this.gameObject.name);
+        }
 
-    private IEnumerator WhenLightIsOn()
-    {
-        yield return new WaitForSeconds(TimeDuration);
-        LightOn = false;  // maybe i don't even need this and could use only setActive instead
-        lightManager.LampEnqueue(this);
-        this.gameObject.SetActive(false);
-    }
+        audioSpectrum = GetComponent<AudioSpectrum>();
+        spriteRenderer = GetComponentsInChildren<SpriteRenderer>();
+        SpritesAlphaSwitcher(1);
         
+
+
+    }
+
+    private void Update()
+    {
+        //test
+
+        if (Flickering && LightOn==1)
+        {
+            FlickeringWithAudio();
+        }
+    }
+
+    public IEnumerator RunJob()
+    {
+        //Debug.Log(this.gameObject.name + " lightOn is " +LightOn);
+        SpritesAlphaSwitcher(LightOn);
+
+        PlayLightSound(LightOn);
+
+        //Debug.Log(this.gameObject.name + " starting to wait");
+        yield return new WaitForSeconds(TimeDuration);
+        //Debug.Log(this.gameObject.name + " end waiting");
+
+        PlayLightSound(1-LightOn);
+
+        SpritesAlphaSwitcher(1-LightOn);
+        //Debug.Log(this.gameObject.name + " switched lights");
+
+        lightManager.LampEnqueue(this);
+        //Debug.Log(this.gameObject.name + " enqueued");
+
+
+        
+    }
+
+    
+
+    private void PlayLightSound(int value)
+    {
+        
+
+        if (value==1)
+        {
+            //Debug.Log(this.gameObject.name + " setting music for");
+            //Debug.Log(lightAudioSource + " setting music to");
+            if (Flickering)
+            {
+                AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.lightBulbsFlickering, lightAudioSource);
+            }
+            else
+            {
+                AudioPlayer.audioPlayerInstance.PlayAudio(lightBulbsNormal, lightAudioSource);
+            }
+
+            
+        }
+        else if (lightAudioSource.isPlaying)
+        {
+            //Debug.Log(this.gameObject.name + " stopping music for");
+            //Debug.Log(lightAudioSource + " stopping music to");
+            if (Flickering)
+            {
+                AudioPlayer.audioPlayerInstance.StopAudio(audioClips.lightBulbsFlickering, lightAudioSource);
+            }
+            else
+            {
+                AudioPlayer.audioPlayerInstance.StopAudio(lightBulbsNormal, lightAudioSource);
+            }
+            
+        }
+        else Debug.Log(this.gameObject.name + " music - pass");
+
+        
+    }
+
+    private void SpritesAlphaSwitcher(int value)  //switches light/shadow on and off
+    {
+        
+        spriteRenderer[0].color = new Vector4(spriteRenderer[0].color.r, spriteRenderer[0].color.g, spriteRenderer[0].color.b, value);
+        spriteRenderer[1].color = new Vector4(spriteRenderer[1].color.r, spriteRenderer[1].color.g, spriteRenderer[1].color.b, 1-value);
+    }
+
+    private void FlickeringWithAudio()
+    {
+        
+        spriteRenderer[0].color = new Vector4(spriteRenderer[0].color.r, spriteRenderer[0].color.g, spriteRenderer[0].color.b, audioSpectrum.FlickeringValue);
+        spriteRenderer[1].color = new Vector4(spriteRenderer[1].color.r, spriteRenderer[1].color.g, spriteRenderer[1].color.b, 1 -audioSpectrum.FlickeringValue);
+    }
+
 }

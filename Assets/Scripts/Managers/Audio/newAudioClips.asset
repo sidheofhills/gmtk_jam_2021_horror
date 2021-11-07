@@ -21,9 +21,16 @@ MonoBehaviour:
   gameWinMenuMusic:
   - {fileID: 8300000, guid: 15f03cf6717715a40ad296116a4b2d8c, type: 3}
   lightBulbsFlickering:
-  - {fileID: 8300000, guid: b86c7a2340dedd7489dadae67864f33b, type: 3}
-  - {fileID: 8300000, guid: b31ec43f2494cf241a923a03ad3d67d9, type: 3}
-  - {fileID: 8300000, guid: 60dd3567669a975449a06b4d132794ad, type: 3}
+  - {fileID: 8300000, guid: a29d7f45a4cc0814aa8e485fe1901b5c, type: 3}
+  - {fileID: 8300000, guid: e67244726d146724bae3abd126463a7c, type: 3}
+  - {fileID: 8300000, guid: 6488ae10eb0544f46bd383958210a779, type: 3}
+  - {fileID: 8300000, guid: 6457b4ea07dcee5408f1064a2d69743f, type: 3}
+  - {fileID: 8300000, guid: d9ffa0af142d0ec4093cae49874d7cfb, type: 3}
+  - {fileID: 8300000, guid: d02d7edc7e4b7c749a6faf0aca1b4d24, type: 3}
+  - {fileID: 8300000, guid: 2d96c309ad53e2b48a63feafcdd3597d, type: 3}
+  - {fileID: 8300000, guid: 42d7d43b9f8d4fc46a0da74ae4eb5643, type: 3}
+  - {fileID: 8300000, guid: ac3ff95396bb4a04298aac97b6b975a8, type: 3}
+  - {fileID: 8300000, guid: aaf2132def13ab34b9321941414fe281, type: 3}
   thunder:
   - {fileID: 8300000, guid: 863ad7f426a8a7f42aacb5e7ed7caa71, type: 3}
   knocking:
@@ -35,20 +42,52 @@ MonoBehaviour:
   transitionToExit:
   - {fileID: 8300000, guid: 431e2c75f6c9aa340b8c3e9753b722aa, type: 3}
   monsterSpawning:
-  - {fileID: 8300000, guid: 63a629e872c03404d88f4139aa6d3d86, type: 3}
-  - {fileID: 8300000, guid: 54eec88b56ba82e47b830297a281701b, type: 3}
-  - {fileID: 8300000, guid: bd54dba557cb7f64b8c7cd1dbbce8fe4, type: 3}
-  - {fileID: 8300000, guid: db0f5e253a39af44e8f2bb69818c8e77, type: 3}
+  - {fileID: 8300000, guid: 4da2d9bb9a970e342a0eb283ce7cc5fb, type: 3}
+  - {fileID: 8300000, guid: 28e2428c1c1d7d74ab04dba0fca492c5, type: 3}
+  - {fileID: 8300000, guid: 60e47695985d878479d0eb7239542e8b, type: 3}
+  - {fileID: 8300000, guid: f2fc2b5f678af5c45bd6d5e392420f01, type: 3}
+  - {fileID: 8300000, guid: 487272a535c9fc244a9161dbd7e54799, type: 3}
+  - {fileID: 8300000, guid: 5bc168c8521c4ba4d984507ea85db060, type: 3}
+  - {fileID: 8300000, guid: 1332d82a9c4e6d642979dd0cff19d24a, type: 3}
+  - {fileID: 8300000, guid: b6c03605ec226754590d88a2ef865fa6, type: 3}
+  - {fileID: 8300000, guid: 838847174881da241a893ac3335e1578, type: 3}
+  - {fileID: 8300000, guid: 98c87be114a5c564ba0f79e906c9daa7, type: 3}
+  - {fileID: 8300000, guid: 42703d4aa622a56408f6e60b2e657713, type: 3}
+  - {fileID: 8300000, guid: 8e32a91df681a3542ba93017efd5f225, type: 3}
+  - {fileID: 8300000, guid: 51a4c8c25569e9843b9a5f4a2fbb0dc4, type: 3}
+  - {fileID: 8300000, guid: 6dfda9e952dbf234dae5c5486a53b2d7, type: 3}
+  - {fileID: 8300000, guid: 41eac99f37e46554b9be67a13eb05894, type: 3}
+  - {fileID: 8300000, guid: d713a5cc5b62c834794aa6f0a77faec7, type: 3}
+  - {fileID: 8300000, guid: bac01cc1b7027de42bd0f930ecf606e7, type: 3}
+  - {fileID: 8300000, guid: ed28306cad20ea44a929eac8ca2d4f22, type: 3}
+  - {fileID: 8300000, guid: aae5523351ab562449c472cc2b36c4e5, type: 3}
+  - {fileID: 8300000, guid: 393d7c1eba682944d893618850d1e0a3, type: 3}
+  - {fileID: 8300000, guid: a9097c307d546574fa3039df2c962b51, type: 3}
+  - {fileID: 8300000, guid: aef0e6134093190449e3bdff4b92f2d5, type: 3}
+  - {fileID: 8300000, guid: 8868c6f585c3d764a9571d1e3d8778f5, type: 3}
+  - {fileID: 8300000, guid: b32d429a5177e9a4592756303bfa5b5b, type: 3}
+  - {fileID: 8300000, guid: 38433e1117c7c3445b8c7f623a5751ad, type: 3}
+  - {fileID: 8300000, guid: 84b505c146b96da4eb55a6c0b4b5dbd8, type: 3}
+  - {fileID: 8300000, guid: cd5966119913946489b38cf27f1c385d, type: 3}
+  - {fileID: 8300000, guid: 7c67691c6230b464b8654c4fb2524d99, type: 3}
+  - {fileID: 8300000, guid: 44f540aac6229b546b83d519e7b1c02d, type: 3}
+  - {fileID: 8300000, guid: da10b9aa7171709419d07b45a930e06a, type: 3}
+  - {fileID: 8300000, guid: d6cbffac911585445b88ec0770e6f396, type: 3}
+  - {fileID: 8300000, guid: a67740cbedde6024b9fb46244df670c8, type: 3}
+  - {fileID: 8300000, guid: 6ce8da947fea44645985abfa4e602222, type: 3}
+  - {fileID: 8300000, guid: 6be75e01d10b5ab46844da41b94fb29a, type: 3}
+  - {fileID: 8300000, guid: 2355fc21b85322442a35ce9e5e237351, type: 3}
   monsterDying:
   - {fileID: 8300000, guid: 348a116b536bfe74995bc2815da7b5a9, type: 3}
   - {fileID: 8300000, guid: e917adad096a94c4e9a8f3790c586064, type: 3}
   - {fileID: 8300000, guid: 930d0f5f52ba9b941be428689d886735, type: 3}
   - {fileID: 8300000, guid: 81b233d972864cf4d9ac9b1b902980a1, type: 3}
   attack:
-  - {fileID: 8300000, guid: 49fd728b0888f66408f861e03ecc8349, type: 3}
-  - {fileID: 8300000, guid: e7f2598efd44be34cbb85b9f0f1d90d4, type: 3}
-  - {fileID: 8300000, guid: 04663043d4d2f2e4ba0923d361a7fd00, type: 3}
-  - {fileID: 8300000, guid: eac663c11fe2b404bbc911867d59b345, type: 3}
+  - {fileID: 8300000, guid: 1fea49cb6596e544caf160319c88e883, type: 3}
+  - {fileID: 8300000, guid: 7bda238e1796e3c4b87f896b7a07e24d, type: 3}
+  - {fileID: 8300000, guid: 6783c84d79e179442ad5609e46b35496, type: 3}
+  - {fileID: 8300000, guid: 3fe2eccc378d513499905d4cd115d8aa, type: 3}
+  - {fileID: 8300000, guid: 512c08adf4a761249912e98f4ef876f0, type: 3}
   buttonHighlighted:
   - {fileID: 8300000, guid: 045b37413283f834097c32b2579294ca, type: 3}
   buttonClicked:
