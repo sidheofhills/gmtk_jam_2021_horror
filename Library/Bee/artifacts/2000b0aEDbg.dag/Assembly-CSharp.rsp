@@ -370,6 +370,7 @@
 "Assets/Scripts/Managers/SelectionManager.cs"
 "Assets/Scripts/Managers/TimeManager.cs"
 "Assets/Scripts/MonsterMovement.cs"
+"Assets/Scripts/MonsterVisibility.cs"
 "Assets/Scripts/ObjectPool/MonsterObjectPool_Advanced.cs"
 "Assets/Scripts/ObjectPool/MonsterObjectPool_Simple.cs"
 "Assets/Scripts/ObjectPool/MonsterReturn.cs"

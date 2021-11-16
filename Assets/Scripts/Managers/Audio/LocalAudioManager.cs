@@ -17,18 +17,13 @@ public class LocalAudioManager : MonoBehaviour
     private void MonsterSpawn()
     {
         AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.monsterSpawning, localAudioSource);
-        //Debug.Log("monster spawn in local audio manager" + audioClips.monsterSpawning[0] + " " + localAudioSource.name);
+       
     }
 
-    /*private void MonsterDeath()
-    {
-        AudioPlayer.audioPlayerInstance.StopAudio(audioClips.monsterSpawning, localAudioSource);
-        AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.monsterDying, localAudioSource);
-    }*/
     private void Attack()
     {
         AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.attack, localAudioSource);  //PREFAB runes OBJECT POOLING UNDER PLAYER OBJECT
-        AudioPlayer.audioPlayerInstance.StopAudio(audioClips.monsterSpawning, localAudioSource);  //for it to mix a bit
+        
     }
 
    
@@ -36,8 +31,8 @@ public class LocalAudioManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.StartListening(gameData.MonsterSpawn, MonsterSpawn);
-        //EventManager.StartListening(gameData.MonsterDeath, MonsterDeath);
+        EventManager.StartListening(gameData.MonsterSpawn, MonsterSpawn);  //этот скрипт должен раотать неправильно
+      
         EventManager.StartListening(gameData.Attack, Attack);
         
 
@@ -46,7 +41,7 @@ public class LocalAudioManager : MonoBehaviour
     private void OnDisable()
     {
         EventManager.StopListening(gameData.MonsterSpawn, MonsterSpawn);
-        //EventManager.StopListening(gameData.MonsterDeath, MonsterDeath);
+      
         EventManager.StopListening(gameData.Attack, Attack);
     }
 

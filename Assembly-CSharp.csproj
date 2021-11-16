@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Shaders\QuickOutline\Scripts\Outline.cs" />
+    <Compile Include="Assets\Scripts\MonsterVisibility.cs" />
     <Compile Include="Assets\Scripts\behaviours\MonsterBasicBehaviour.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\WeaponReturn.cs" />
     <Compile Include="Assets\Scripts\UI\KnockUI.cs" />

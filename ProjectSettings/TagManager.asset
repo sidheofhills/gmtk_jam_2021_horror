@@ -8,6 +8,8 @@ TagManager:
   - enemy
   - glass
   - lamp
+  - left
+  - right
   layers:
   - Default
   - TransparentFX

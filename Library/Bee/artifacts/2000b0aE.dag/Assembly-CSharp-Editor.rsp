@@ -352,6 +352,7 @@
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.ref.dll"
+-r:"Library/Bee/artifacts/2000b0aE.dag/UnitySpriteShadersEditor.ref.dll"
 "Assets/Install Bolt/Editor/InstallBoltMenuItem.cs"
 -langversion:8.0
 

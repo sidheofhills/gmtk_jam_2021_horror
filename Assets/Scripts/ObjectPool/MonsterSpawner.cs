@@ -13,6 +13,7 @@ public class MonsterSpawner : MonoBehaviour
 
     [SerializeField] private bool leftSide;
     public bool LeftSide => leftSide;
+    [SerializeField] float waitingOffsetTime;
 
     private float basicTimeSinceSpawn;
     private float specialTimeSinceSpawn;
@@ -51,6 +52,7 @@ public class MonsterSpawner : MonoBehaviour
     {
         if (KnockUI.HeKnocked)
         { 
+            
             basicTimeSinceSpawn += Time.deltaTime;
             specialTimeSinceSpawn += Time.deltaTime;
 
@@ -92,10 +94,11 @@ public class MonsterSpawner : MonoBehaviour
     }
 
 
-    public void SpawnFromThisPoint(GameObject prefab)
+    public GameObject SpawnFromThisPoint(GameObject prefab)
     {
         GameObject newObject = objectPool.GetObject(prefab);
         Vector2 newSpawnPoint = new Vector2(0, 0);
+        
 
         gameData.enemyNum += 1;
 
@@ -107,6 +110,7 @@ public class MonsterSpawner : MonoBehaviour
 
         newObject.transform.position = newSpawnPoint;
 
+        return newObject;
 
 
     }

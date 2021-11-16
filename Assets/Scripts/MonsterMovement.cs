@@ -12,15 +12,18 @@ public class MonsterMovement : MonoBehaviour
 
     // Start is called before the first frame update
     void Awake()
-    {        
+    {
+        
         startMoving = false;
+        
     }
 
     private void OnEnable()
     {
-        
+        //transform.position = new Vector3()
         transform.localScale = new Vector3(gameData.startingScale, gameData.startingScale, 1);
-        EventManager.StartListening(gameData.MonsterSpawn, StartMoving);
+        
+        startMoving = true;
         
     }
  
@@ -42,11 +45,7 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
-    private void StartMoving()
-    {
-        startMoving = true;
-        
-    }
+    
     private void Movement()
     {
         float newScaleComponents = (Time.deltaTime * gameData.scaleMult);
@@ -59,7 +58,7 @@ public class MonsterMovement : MonoBehaviour
  
     private void OnDisable()
     {
-        EventManager.StopListening(gameData.MonsterSpawn, StartMoving);
+        
         startMoving = false;
 
     }

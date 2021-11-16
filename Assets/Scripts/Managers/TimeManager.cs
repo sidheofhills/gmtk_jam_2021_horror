@@ -64,7 +64,7 @@ public class TimeManager : MonoBehaviour
             clockTimer = minuteToRealTimeRatio;
         }
         
-        if (Minute >= firstStageTimer)  //minute is TMP better use handOnTimer 
+        if (Minute >= firstStageTimer)  //minute is TMP better use handOnTimer  TIMELEFTTOHARGON PROBABLY
         {
             gameData.firstStageOn = true;
             //if(Time.frameCount%24==0) Debug.Log("firstStageOn");

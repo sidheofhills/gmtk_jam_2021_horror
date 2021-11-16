@@ -22,8 +22,6 @@ public class LampLight : MonoBehaviour
     private AudioSource lightAudioSource;
     private SpriteRenderer[] spriteRenderer;
     private AudioSpectrum audioSpectrum;
-    private Color lightColor;
-    private Color shadowColor;
     public float testAlpha;
 
     private void Awake()
@@ -125,14 +123,18 @@ public class LampLight : MonoBehaviour
     {
         
         spriteRenderer[0].color = new Vector4(spriteRenderer[0].color.r, spriteRenderer[0].color.g, spriteRenderer[0].color.b, value);
-        spriteRenderer[1].color = new Vector4(spriteRenderer[1].color.r, spriteRenderer[1].color.g, spriteRenderer[1].color.b, 1-value);
+        spriteRenderer[1].color = new Vector4(spriteRenderer[1].color.r, spriteRenderer[1].color.g, spriteRenderer[1].color.b, value);
+        spriteRenderer[2].color = new Vector4(spriteRenderer[2].color.r, spriteRenderer[2].color.g, spriteRenderer[2].color.b, value);
+        spriteRenderer[3].color = new Vector4(spriteRenderer[3].color.r, spriteRenderer[3].color.g, spriteRenderer[3].color.b, 1-value);
     }
 
     private void FlickeringWithAudio()
     {
         
         spriteRenderer[0].color = new Vector4(spriteRenderer[0].color.r, spriteRenderer[0].color.g, spriteRenderer[0].color.b, audioSpectrum.FlickeringValue);
-        spriteRenderer[1].color = new Vector4(spriteRenderer[1].color.r, spriteRenderer[1].color.g, spriteRenderer[1].color.b, 1 -audioSpectrum.FlickeringValue);
+        spriteRenderer[1].color = new Vector4(spriteRenderer[1].color.r, spriteRenderer[1].color.g, spriteRenderer[1].color.b, audioSpectrum.FlickeringValue);
+        spriteRenderer[2].color = new Vector4(spriteRenderer[2].color.r, spriteRenderer[2].color.g, spriteRenderer[2].color.b, audioSpectrum.FlickeringValue);
+        spriteRenderer[3].color = new Vector4(spriteRenderer[3].color.r, spriteRenderer[3].color.g, spriteRenderer[3].color.b, 1 -audioSpectrum.FlickeringValue);
     }
 
 }

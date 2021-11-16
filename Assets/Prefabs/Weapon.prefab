@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfb05c7572b23a4c9f50105f23c2c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 0}
+  gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
   secondsBeforeReturn: 1
 --- !u!114 &1107322255981708089
 MonoBehaviour:
@@ -62,6 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
   audioClips: {fileID: 11400000, guid: 85427a3c1b9bd15488bf9969a8c03344, type: 2}
+  clipOptions: 1
 --- !u!82 &4938069146774519108
 AudioSource:
   m_ObjectHideFlags: 0
