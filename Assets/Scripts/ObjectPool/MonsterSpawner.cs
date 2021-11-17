@@ -25,8 +25,9 @@ public class MonsterSpawner : MonoBehaviour
     [SerializeField] private GameObject slipperyPefab;
     [SerializeField] private GameObject replicantPefab;
 
-    [SerializeField] int slipperyNumber;
-    [SerializeField] int replicantNumber;
+    [SerializeField] private int slipperyNumber;
+    [SerializeField] private int replicantNumber;
+    [SerializeField] private int poolStartSize = 4;
 
     public GameData gameData;
 
@@ -44,6 +45,9 @@ public class MonsterSpawner : MonoBehaviour
         {
             Debug.Log("No game object called ObjectPool_Advanced found");
         }
+        objectPool.SettingUpPool(basicPefab, poolStartSize);
+        objectPool.SettingUpPool(slipperyPefab, poolStartSize);
+        objectPool.SettingUpPool(replicantPefab, poolStartSize);
 
     }
 
@@ -94,7 +98,7 @@ public class MonsterSpawner : MonoBehaviour
     }
 
 
-    public GameObject SpawnFromThisPoint(GameObject prefab)
+    public void SpawnFromThisPoint(GameObject prefab)
     {
         GameObject newObject = objectPool.GetObject(prefab);
         Vector2 newSpawnPoint = new Vector2(0, 0);
@@ -110,7 +114,7 @@ public class MonsterSpawner : MonoBehaviour
 
         newObject.transform.position = newSpawnPoint;
 
-        return newObject;
+        //return newObject;
 
 
     }

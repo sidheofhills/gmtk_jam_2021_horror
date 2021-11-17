@@ -5,7 +5,19 @@ using UnityEngine;
 public class MonsterObjectPool_Advanced : MonoBehaviour
 {
     private Dictionary<string, Queue<GameObject>> objectPool = new Dictionary<string, Queue<GameObject>>();  //create and initialize dictionary
+    
+    public void SettingUpPool(GameObject gameObject,int poolSize)
+    {
+        for (int i = 0; i < poolSize; i++)
+        {
+            CreateNewObject(gameObject);
+            Queue<GameObject> newObjectQueue = new Queue<GameObject>();
+            newObjectQueue.Enqueue(gameObject);
+            gameObject.SetActive(false);
+            objectPool.Add(gameObject.name, newObjectQueue);
+        }
 
+    }
 
 
     public GameObject GetObject(GameObject gameObject)
@@ -21,6 +33,7 @@ public class MonsterObjectPool_Advanced : MonoBehaviour
             {
                 GameObject _object = objectList.Dequeue();
                 
+                Debug.Log("i was killed and i'm reborn" + gameObject.name);
                 _object.SetActive(true);
                 return _object;
                 
@@ -38,6 +51,7 @@ public class MonsterObjectPool_Advanced : MonoBehaviour
     {
         GameObject newGameObject = Instantiate(gameObject);
         newGameObject.name = gameObject.name;  //for better control over variety of objectLists
+        
         return newGameObject;
     }
 

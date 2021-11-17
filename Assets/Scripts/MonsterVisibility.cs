@@ -28,7 +28,7 @@ public class MonsterVisibility : MonoBehaviour
 
     private Transform monsterTransform;
 
-    
+    private float testCurPosX;
 
     // Start is called before the first frame update
     void Awake()
@@ -103,6 +103,7 @@ public class MonsterVisibility : MonoBehaviour
     private void ChosenLampListAssignment()
     {
         float currentXpos = monsterTransform.localPosition.x;
+        testCurPosX = currentXpos;
         Debug.Log(currentXpos + " curXpos in " + this.gameObject.name);
         if (currentXpos < 0.0f)
         {

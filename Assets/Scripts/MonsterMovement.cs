@@ -17,10 +17,10 @@ public class MonsterMovement : MonoBehaviour
         startMoving = false;
         
     }
-
+    
     private void OnEnable()
     {
-        //transform.position = new Vector3()
+        
         transform.localScale = new Vector3(gameData.startingScale, gameData.startingScale, 1);
         
         startMoving = true;

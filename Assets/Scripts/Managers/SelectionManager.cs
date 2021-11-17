@@ -21,13 +21,13 @@ public class SelectionManager : MonoBehaviour // i guess it's obsolete
         // Update is called once per frame
     void Update()
     {
-        SelectObject();
+        //SelectObject();
     }
 
 
     private void LateUpdate()
     {
-        DeselectObject();
+        //DeselectObject();
     }
 
     private void SelectObject()
