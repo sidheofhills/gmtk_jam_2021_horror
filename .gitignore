@@ -1,0 +1,9 @@
+Asset/Graphics
+Library/Artifacts/
+Library/ArtifactDB
+Library/PlayerDataCache/WebGL/Data/sharedassets1.resource
+Library/PlayerDataCache/WebGL/Data/sharedassets0.resource
+Library/il2cpp_cache/linkresult_7A56A04A77DDFD732F3A4262AE56CD5A/build.bc
+Library/Il2cppBuildCache/WebGL/Native/build.bc
+
+*.resource
