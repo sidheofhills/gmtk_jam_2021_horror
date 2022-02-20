@@ -3,36 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof (AudioSource))]
-public class LightsAudioSpectrum : MonoBehaviour
+public class LightsAudioSpectrum : MonoBehaviour  // this one is to flick with audio
 {
     private float spectrumValue;
     private float[] spectrumData = new float[128];
     private AudioSource localAudioSource;
 
-
-    
     private float prevSpectrumVal;
     private float curSpectrumVal;
+
     public float FlickeringValue { get; private set; }
+
     [SerializeField] private float bias;
     [SerializeField] private float fitVal = 200.0f;
 
-    private void Awake()
+    private void Start()
     {
-        localAudioSource = GetComponent<AudioSource>();
-        if (localAudioSource)
-        {
-            Debug.Log(localAudioSource.name + this.gameObject.name);
-        }
-        else
-        {
-            Debug.Log("No game object called lightAudioSource found in " + this.gameObject.name);
-        }
-
+        localAudioSource = GetComponent<AudioSource>(); 
     }
+
     private void Update()
     {
-        localAudioSource.GetSpectrumData(spectrumData, 0, FFTWindow.Hanning);
+        localAudioSource.GetSpectrumData(spectrumData, 0, FFTWindow.Hanning); // Hanning is good with white noise sounds 
 
         if (spectrumData != null && spectrumData.Length > 0)
         {
@@ -43,14 +35,13 @@ public class LightsAudioSpectrum : MonoBehaviour
             curSpectrumVal = spectrumValue;
             if(prevSpectrumVal > bias && curSpectrumVal <= bias)
             {
-                FlickeringValue = Mathf.Clamp01(Mathf.Pow(curSpectrumVal*fitVal,2));
-                //Debug.Log(FlickeringValue);
+                FlickeringValue = Mathf.Clamp01(Mathf.Pow(curSpectrumVal*fitVal,2));               
+                
             }
 
         }
 
         
-
     }
 
 }

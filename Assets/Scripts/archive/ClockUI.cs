@@ -5,7 +5,7 @@ using TMPro;
 
 public class ClockUI : MonoBehaviour
 {
-    public GameData gameData;
+    /*public GameData gameData;
     [SerializeField] TextMeshProUGUI timeText;
 
     private void Start()
@@ -15,29 +15,29 @@ public class ClockUI : MonoBehaviour
     private void OnEnable()
     {
         EventManager.StartListening(gameData.OnMinute, UpdateTime);
-        Debug.Log(TimeManager.Minute + "Minute");
+        Debug.Log(Timer.Minute + "Minute");
         EventManager.StartListening(gameData.OnHour, UpdateTime);
-        Debug.Log(TimeManager.Hour + "Hour");
+        Debug.Log(Timer.Hour + "Hour");
     }
     private void OnDisable()
     {
         EventManager.StopListening(gameData.OnMinute, UpdateTime);
-        Debug.Log(TimeManager.Minute + "MinuteUnsubsc");
+        Debug.Log(Timer.Minute + "MinuteUnsubsc");
         EventManager.StopListening(gameData.OnHour, UpdateTime);
-        Debug.Log(TimeManager.Hour + "HourUnsubsc");
+        Debug.Log(Timer.Hour + "HourUnsubsc");
     }
 
     
 
     private void SetInitialTime()
     {
-        timeText.text = $"{TimeManager.Hour:00}:{TimeManager.Minute:00}";
+        timeText.text = $"{Timer.Hour:00}:{Timer.Minute:00}";
     }
         private void UpdateTime()
     {
-        timeText.text = $"{TimeManager.Hour:00}:{TimeManager.Minute:00}";  //:00 это маска на то, чтобы ремя было в пределах двух нулей, даже если 1 цифра
+        timeText.text = $"{Timer.Hour:00}:{Timer.Minute:00}";  //:00 это маска на то, чтобы ремя было в пределах двух нулей, даже если 1 цифра
 
 
         // СДЕЛАТЬ МИГАЮЩЕЕ ДВОЕТОЧИЕ ПО ТОМУ ЖЕ ТУТОРУ ЧТО И В ДЭД.ЮАЙ - ПРОСТО СИНУС В ТРЕТИЙ КОМПОНЕНТ
-    }
+    }*/
 }

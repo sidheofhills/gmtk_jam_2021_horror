@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftLamp: 1
+  manualLampSwitchOff: 0
   gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
   audioClips: {fileID: 11400000, guid: 85427a3c1b9bd15488bf9969a8c03344, type: 2}
   lightBulbsNormal:
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c0378df80ada9e47893642df899ad32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bias: 0.3
+  bias: 0.2
   fitVal: 200
 --- !u!82 &-5013903621379989015
 AudioSource:
@@ -78,7 +79,8 @@ AudioSource:
   m_GameObject: {fileID: 1741219543622688877}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2530091449837963202, guid: d1a193be45150ad4e8365c9342f2d6df,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

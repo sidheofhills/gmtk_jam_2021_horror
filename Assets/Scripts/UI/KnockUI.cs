@@ -5,33 +5,45 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 
-public class KnockUI : MonoBehaviour
+public class KnockUI : MonoBehaviour  //не обязаьеьный скрипт  с исчезающей кнопкой
 {
     [SerializeField] private float animTime;
     [SerializeField] private GameObject container;
-    public static bool HeKnocked { get; private set; }
+    [SerializeField] GameData gameData;
 
     private void Awake()
     {
+        
         container.gameObject.SetActive(true);
-        HeKnocked = false;
+        
         
     }
     
    
      public void OnClick()  //name of the func that will be called when buttom is clicked. must be publuc to be seen
     {
-        StartCoroutine(KnockEvent());
-        Debug.Log("clicked");
+        StartCoroutine(KnockEvent());        
     }
     private IEnumerator KnockEvent()
     {
-        Debug.Log("start waiting");
+        //cutScene On
+        
         yield return new WaitForSeconds(animTime);
-        Debug.Log("end waitung");
-        HeKnocked = true;
-    Debug.Log("sent trigger");
+        
         container.gameObject.SetActive(false);
 
+    }
+    private void OnSkip()
+    {
+        container.gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        EventManager.StartListening(gameData.Skip, OnSkip);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.StopListening(gameData.Skip, OnSkip);
     }
 }

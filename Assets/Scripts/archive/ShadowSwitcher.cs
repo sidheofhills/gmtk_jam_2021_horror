@@ -11,11 +11,11 @@ public class ShadowSwitcher : MonoBehaviour
         allChildren = GetComponentsInChildren<Transform>();
         if(allChildren[1].TryGetComponent<LampLight>(out LampLight lampLight))
         {
-            Debug.Log("this is light " + allChildren[1].name);
+            //Debug.Log("this is light " + allChildren[1].name);
         }
         else
         {
-            Debug.Log("wrong order. this is " + allChildren[1].name + "in "+ allChildren[0].name + ", not light");
+            //Debug.Log("wrong order. this is " + allChildren[1].name + "in "+ allChildren[0].name + ", not light");
         }
             
     }

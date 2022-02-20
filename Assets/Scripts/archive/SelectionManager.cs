@@ -42,13 +42,13 @@ public class SelectionManager : MonoBehaviour // i guess it's obsolete
 
             if (hit.collider != null &&!EventSystem.current.IsPointerOverGameObject())  //second bit is for UI black part
             {
-                gameData.selectedObject = hit.transform.gameObject;
+                //gameData.selectedObject = hit.transform.gameObject;
                 
-                Debug.Log("sel obj " + gameData.selectedObject);
+                //Debug.Log("sel obj " + gameData.selectedObject);
             }
             else
             {                
-                Debug.Log("Did not Hit" + Input.mousePosition);
+                //Debug.Log("Did not Hit" + Input.mousePosition);
             }
         }      
     }
@@ -58,8 +58,8 @@ public class SelectionManager : MonoBehaviour // i guess it's obsolete
     {
         if (Input.GetMouseButtonUp(0))
         {
-            gameData.selectedObject = null;
-            Debug.Log("Deselecd"  + gameData.selectedObject);
+            //gameData.selectedObject = null;
+            //Debug.Log("Deselecd"  + gameData.selectedObject);
         }
     }
 

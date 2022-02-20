@@ -6,67 +6,66 @@ using Random = UnityEngine.Random;
 
 public class LightManager : MonoBehaviour
 {
-    public LampLight[] initialLampList;
-    private Queue<LampLight> lampQueue = new Queue<LampLight>();
-    public GameData gameData;
+    public LampLight[] initialLampArray;
+    public LampLight[] flickeringArray;
+    private readonly Queue<LampLight> LampQueue = new Queue<LampLight>();
+    [SerializeField] GameData gameData;
 
     [SerializeField] private int maxTimeDuration;
-    private int lampsCounter; // counting ones that are On
-    private int lLampsCounter; //left 3
-    private int rLampsCounter;  // right 3
     private LampLight currentLampLight;
+
+    // a bit obsolete after i deciced to keep the closest lamps on 
+    private int lampsCounter; // counting ones that are On
+    private int lLampsCounter; //left 2
+    private int rLampsCounter;  // right 2
 
 
     private void Start()
     {
         lampsCounter = 0;
         lLampsCounter = 0;
-        rLampsCounter = 0;
-
-        //needs to be                 some kind of checker whether all of the lights are initiated
-
-        InitialEnqueue(); //preparation of the lights at the beginning and a start of the sequence of events
-
+        rLampsCounter = 0;        
     }
+
     #region Private Functions
-    private void LampSetupper() //is called at the start and then at the event calls
+    private void InitialEnqueue()  //preparation of the lights 
+
     {
-        currentLampLight = lampQueue.Dequeue();  
+        foreach (LampLight lamp in flickeringArray)
+        {
+            lamp.BeforeKnock();
+        }
+        
+        foreach (LampLight lamp in initialLampArray)
+        {            
+            LampEnqueue(lamp);           // this one keeps rolling because throughout the game lamps keep queuing
+        }
+    }
+
+    private void LampSetupper() //is called at the start spawn and then when lamp enqueues
+    {
+        currentLampLight = LampQueue.Dequeue();  
         currentLampLight.TimeDuration = Random.Range(0.5f,2f) * maxTimeDuration;
         currentLampLight.LightOn = Random.Range(0,2);
         
 
 
         if (currentLampLight.LightOn==1)
-            {
-                //check whether there're more than 3 lights on and  more than 2 on left/right side
-                if ((lampsCounter >= 3) || ((currentLampLight.LeftLamp && lLampsCounter >= 2) ||
-                                (!currentLampLight.LeftLamp && rLampsCounter >= 2)))
-                {
-                    CountersUpdate(-1);
-                    currentLampLight.LightOn = 0;
-                }
-
-                else
-                {
-                    //LightOn is true here
-                    CountersUpdate(1);
-                    
-                    currentLampLight.Flickering = Random.Range(0, 2) == 0;
-                    //Debug.Log("lightOn is true, flickering is " + currentLampLight.Flickering);
-                }
+            {                
+                  //LightOn is true here
+                    CountersUpdate(1);                    
+                    currentLampLight.Flickering = Random.Range(0, 2) == 0;                                  
             }
             else
             {
                 //LightOn is false here
                 if (lampsCounter > 0)  CountersUpdate(-1);
-            
+                currentLampLight.TimeDuration /= 2;
             }
 
         
-        StartCoroutine(currentLampLight.RunJob());
+        StartCoroutine(currentLampLight.RunJob());        
         
-        // —≈…◊¿— √Œ–ﬂ“ ¬—≈ À¿ÃœŒ◊ », ¿ ƒŒÀ∆ÕŒ Õ≈ ¡ŒÀ‹ÿ≈ “–≈’
     }
 
     private Tuple<int, int, int> CountersUpdate(int value)  
@@ -89,25 +88,29 @@ public class LightManager : MonoBehaviour
         }
     }
 
-    void InitialEnqueue()  
-    {
-        //initialLampList = FindObjectsOfType<LampLight>();
-        foreach (LampLight lamp in initialLampList)
-        {
-            LampEnqueue(lamp);           
-        }
-    }
+
     #endregion
 
     #region Public Functions
+    // it's probably no good that lightManager and lampLights call out each others functions
     public void LampEnqueue(LampLight lampLight)  //for LampLight to call it
     {
-        lampQueue.Enqueue(lampLight);
+        LampQueue.Enqueue(lampLight);
         LampSetupper();
     }
 
     #endregion
 
+    private void OnEnable()
+    {
+        EventManager.StartListening(gameData.MonstersSpawn, InitialEnqueue);
+    }
+    private void OnDisable()
+    {
+        EventManager.StopListening(gameData.MonstersSpawn, InitialEnqueue);
+        
+
+    }
 }
 
 

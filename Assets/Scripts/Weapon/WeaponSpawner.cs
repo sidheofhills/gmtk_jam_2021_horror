@@ -3,81 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(WeaponObjectPool_Simple))]
 public class WeaponSpawner : MonoBehaviour
 {
-    private MonsterObjectPool_Advanced objectPool;
+    private WeaponObjectPool_Simple objectPool;
 
-    //public for them to be taken elsewhere 
-    [SerializeField] private GameObject weaponPefab;
-    
     public GameData gameData;
-    private bool attack;
-
-
-
+   
     // Start is called before the first frame update
     void Start()
     {
-        objectPool = FindObjectOfType<MonsterObjectPool_Advanced>();
-        if (objectPool)
-        {
-            Debug.Log(objectPool.name);
-        }
-        else
-        {
-            Debug.Log("No game object called ObjectPool_Advanced found");
-        }
-        attack = false;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*if (KnockUI.HeKnocked)
-        {
-            if(attack)
-            {
-                SpawnFromThisPoint();
-                attack = false;
-                Debug.Log("2attack false");
-            }
-        }*/
-    }
-   
-
-
-    public void SpawnFromThisPoint()
-    {
-        GameObject newObject = objectPool.GetObject(weaponPefab);
+        objectPool = GetComponent<WeaponObjectPool_Simple>();
         
-        //EventManager.TriggerEvent(gameData.Attack); // EVENT TRIGGER  attackEvent()
+        // in scriptable objects data is not updating with exiting a game 
+        // so it needs to be done manually
+        gameData.weaponSpawnTransform = new Vector3(0, 0, 0);
 
-        newObject.transform.position = gameData.weaponSpawnTransform;
-       
+    }
 
+
+    public void SpawnFromThisPoint(Vector3 position, Vector3 scale)
+    {
+        GameObject newObject = objectPool.GetObject(); 
+        newObject.transform.position = position;
+        newObject.transform.localScale = scale;
+
+        EventManager.TriggerEvent(gameData.MonsterDeath);
+
+
+
+        //play spawn animation
     }
   
 
-    private void Attack()
-    {
-        attack = true;
-        Debug.Log("1attack true");
-    }
 
-
-    #region Events Functions Enable/Disable
-    private void OnEnable()
-    {
-        EventManager.StartListening(gameData.Attack, SpawnFromThisPoint);
-
-    }
-
-
-    private void OnDisable()
-    {
-        EventManager.StopListening(gameData.Attack, SpawnFromThisPoint);
-
-    }
-    #endregion
+   
 }

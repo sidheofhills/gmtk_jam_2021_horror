@@ -12,14 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67861d39272dc240aeaca85d97d8095, type: 3}
   m_Name: newAudioClips
   m_EditorClassIdentifier: 
-  mainMenuMusic:
-  - {fileID: 8300000, guid: 98e7138dedb12a4439b345ccbc094095, type: 3}
-  mainLevelMusic:
-  - {fileID: 8300000, guid: cef6a260ff0f264439b9188d9a601974, type: 3}
-  gameOverMenuMusic:
-  - {fileID: 8300000, guid: cf0dd0e88b1cf464c8265f8cce779f7b, type: 3}
-  gameWinMenuMusic:
-  - {fileID: 8300000, guid: 15f03cf6717715a40ad296116a4b2d8c, type: 3}
+  bgMusic:
+  - {fileID: 8300000, guid: acf897c6f1b95e24eaea8cc9eb3a96b6, type: 3}
   lightBulbsFlickering:
   - {fileID: 8300000, guid: a29d7f45a4cc0814aa8e485fe1901b5c, type: 3}
   - {fileID: 8300000, guid: e67244726d146724bae3abd126463a7c, type: 3}
@@ -90,6 +84,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 512c08adf4a761249912e98f4ef876f0, type: 3}
   buttonHighlighted:
   - {fileID: 8300000, guid: 045b37413283f834097c32b2579294ca, type: 3}
+  - {fileID: 8300000, guid: e3448981b492c6740b70e1aac752e070, type: 3}
+  - {fileID: 8300000, guid: 55e571673da33ef45bf2ab735ea082ca, type: 3}
+  - {fileID: 8300000, guid: f44afeeb7aa0da447b017aa273949881, type: 3}
   buttonClicked:
   - {fileID: 8300000, guid: ad27ecb43ab3db94ba80fc32921218a4, type: 3}
   message:

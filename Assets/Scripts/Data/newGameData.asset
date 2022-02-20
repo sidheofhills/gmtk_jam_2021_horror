@@ -12,14 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a469a7b96adbd984cb2e460b5c483b4d, type: 3}
   m_Name: newGameData
   m_EditorClassIdentifier: 
-  enemyNum: 0
-  selectedObject: {fileID: 0}
+  cutSceneDone: 1
+  startSpawn: 1
   weaponSpawnTransform: {x: 0, y: 0, z: 0}
-  speed: 0.3
-  scaleMult: 0.01
-  startingScale: 0.22
-  deathScale: 1
-  boxColliderExpandValue: 1.5
-  firstStageOn: 0
-  secondStageOn: 0
-  thirdStageOn: 0
+  scaleMult: 0.075
+  startingScale: 0.4
+  warningScale: 1.36
+  deathScale: 1.7

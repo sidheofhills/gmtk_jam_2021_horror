@@ -47,13 +47,10 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.8</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WebGL:20</UnityBuildTarget>
     <UnityVersion>2021.1.11f1</UnityVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
@@ -62,49 +59,70 @@
     <Compile Include="Assets\Shaders\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterVisibility.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterBasicBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Cutscene\TriggerCreditsEvent.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponReturn.cs" />
+    <Compile Include="Assets\Scripts\HandSkip.cs" />
     <Compile Include="Assets\Scripts\UI\KnockUI.cs" />
-    <Compile Include="Assets\Scripts\Managers\TimeManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\Timer.cs" />
     <Compile Include="Assets\Scripts\UI\DeadUI.cs" />
+    <Compile Include="Assets\Scripts\Penta\PentaActivation.cs" />
+    <Compile Include="Assets\Scripts\Penta\PentaDarkAnimation.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Candles\CandlesMain.cs" />
     <Compile Include="Assets\Scripts\Lights\LightManager.cs" />
     <Compile Include="Assets\Scripts\archive\AudioCollector.cs" />
-    <Compile Include="Assets\Scripts\UI\GameMenuUI.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonBlinkingUI.cs" />
     <Compile Include="Assets\Scripts\Lights\LampLight.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterMovement.cs" />
     <Compile Include="Assets\Scripts\Managers\InputController.cs" />
-    <Compile Include="Assets\Scripts\Monster\MonsterObjectPool_Simple.cs" />
+    <Compile Include="Assets\Scripts\Weapon\WeaponObjectPool_Simple.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterSpawner.cs" />
     <Compile Include="Assets\Scripts\archive\ChangingEnemyBehaviorOverTime.cs" />
     <Compile Include="Assets\Scripts\archive\SelectionManager.cs" />
-    <Compile Include="Assets\Scripts\Lights\LightsAudioManager.cs" />
+    <Compile Include="Assets\Scripts\archive\LightsAudioManager.cs" />
+    <Compile Include="Assets\Scripts\Cutscene\CreditsCutscene.cs" />
+    <Compile Include="Assets\Scripts\Penta\PentaDarkAudioManager.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterSlipperyBehaviour.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonSetHighlighted.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioPlayer.cs" />
-    <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioMainLevelBg.cs" />
     <Compile Include="Assets\Scripts\Managers\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Monster\TriggeredMonsterSpawn.cs" />
+    <Compile Include="Assets\Scripts\Monster\MonsterSimulateActivation.cs" />
     <Compile Include="Assets\Scripts\Managers\SceneManager.cs" />
+    <Compile Include="Assets\Scripts\Penta\PentaWhiteAnimation.cs" />
     <Compile Include="Assets\Scripts\archive\GameOverTrigger.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponSpawner.cs" />
+    <Compile Include="Assets\Scripts\Monster\MonsterKillCounter.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterReturn.cs" />
+    <Compile Include="Assets\Scripts\Lights\AllLightsOn.cs" />
+    <Compile Include="Assets\Scripts\Penta\PentaWhiteAudioManager.cs" />
     <Compile Include="Assets\Scripts\archive\OnBordersEnter.cs" />
     <Compile Include="Assets\Scripts\archive\AudioTitle.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterReplicantBehaviour.cs" />
     <Compile Include="Assets\Scripts\archive\SpawnNightmares.cs" />
-    <Compile Include="Assets\Scripts\FitFunction.cs" />
+    <Compile Include="Assets\Scripts\Utilities\FitFunction.cs" />
     <Compile Include="Assets\Scripts\archive\ClockUI.cs" />
     <Compile Include="Assets\Scripts\archive\ShadowSwitcher.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterObjectPool_Advanced.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonSound.cs" />
+    <Compile Include="Assets\Scripts\WarningCrackedGlass.cs" />
     <Compile Include="Assets\Scripts\archive\AudioSources.cs" />
     <Compile Include="Assets\Scripts\Data\GameData.cs" />
+    <Compile Include="Assets\Scripts\Weapon\WeaponAudioManager.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterParentClass.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterSpawnManager.cs" />
     <Compile Include="Assets\Graphics\proto_art\Scripts\PositionRendererSorter.cs" />
+    <Compile Include="Assets\Scripts\Candles\CandlesGrp.cs" />
     <Compile Include="Assets\Scripts\archive\SwitcherUI.cs" />
+    <Compile Include="Assets\Scripts\Weapon\WeaponOnEnable.cs" />
     <Compile Include="Assets\Scripts\archive\SlipperyMod.cs" />
+    <Compile Include="Assets\Scripts\UI\GameWinTextFade.cs" />
     <Compile Include="Assets\Scripts\Lights\LightsAudioSpectrum.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioClips.cs" />
     <Compile Include="Assets\Scripts\archive\Nightmares.cs" />
-    <Compile Include="Assets\Scripts\Weapon\WeaponAudioManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities\FadeInFadeOut.cs" />
+    <Compile Include="Assets\Scripts\Cutscene\CutsceneManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
@@ -164,6 +182,7 @@
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Graphs.Editor.xml" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\System.Xml.Linq.xml" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Utilities.v3.5.xml" />
+    <None Include="Assets\Fonts\Teko\OFL.txt" />
     <None Include="Assets\Prefabs\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Conversion.v3.5.xml" />
     <None Include="Assets\Fonts\Nothing_You_Could_Do\OFL.txt" />
     <None Include="Assets\Prefabs\Ludiq\Assemblies\Ludiq.Core.Editor.xml" />

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterReplicantBehaviour : MonsterParentClass
-{
-    [SerializeField] private int numberOfReplicants = 3;
-    
+{    
     private MonsterSpawner spawner;
+    private GameObject spawningPefab;
+    [SerializeField] private GameData gameData;
     [SerializeField] private GameObject slipperyPefab;
+    [SerializeField] private GameObject basicPefab;
+    private int numberOfReplicants = 2;
 
-    private void Awake()
-    {
-        
+    private void Start()
+    {        
         spawner = FindObjectOfType<MonsterSpawner>();
-        
+        spawningPefab = basicPefab;        
     }
 
     private void OnMouseDown()
@@ -25,9 +26,23 @@ public class MonsterReplicantBehaviour : MonsterParentClass
     {
         for (int i = 0; i < numberOfReplicants; i++)
         {
-            spawner.SpawnFromThisPoint(slipperyPefab, this.transform.position);
+            spawner.SpawnFromThisPoint(spawningPefab, this.transform.position);
         }
         ClickToDeath();
-        Debug.Log("replicant mod done");
+        
+    }
+
+    private void OnSecondPhaseEnds()
+    {        
+        spawningPefab = slipperyPefab;
+        numberOfReplicants *= 2; 
+    }
+    private void OnEnable()
+    {        
+        EventManager.StartListening(gameData.SecondPhaseEnds, OnSecondPhaseEnds);
+    }
+    private void OnDisable()
+    {        
+        EventManager.StopListening(gameData.SecondPhaseEnds, OnSecondPhaseEnds);
     }
 }

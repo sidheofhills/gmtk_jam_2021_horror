@@ -1,16 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterParentClass : MonoBehaviour
+public  class MonsterParentClass : MonoBehaviour //colud be an abstract class as well
 {
-    public GameData gameData;
-    protected void ClickToDeath()
+    // the behavior that shared among all of the monsters
+    protected WeaponSpawner weaponSpawner;
+    private void Awake()
     {
-        gameData.weaponSpawnTransform = this.gameObject.transform.position;
-        EventManager.TriggerEvent(gameData.Attack);
-        
+        weaponSpawner = FindObjectOfType<WeaponSpawner>();  
+    }
+    protected void ClickToDeath()
+    {        
+        weaponSpawner.SpawnFromThisPoint(this.gameObject.transform.position, this.gameObject.transform.localScale);        
+        // play death animation
+
         this.gameObject.SetActive(false);
         
+
     }
 }

@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class MonsterMovement : MonoBehaviour
+public class MonsterMovement : MonoBehaviour // as it is a 2d game, i faked movement by simply scaling up monsters
 {
-   
     [SerializeField] private GameData gameData;
     private bool startMoving;
-    
 
-    // Start is called before the first frame update
-    void Awake()
+    private bool leftSide = false; //  for glass cracking events
+
+    void Awake()  // because i need it to set up before onEnable
     {
         
         startMoving = false;
@@ -20,48 +19,64 @@ public class MonsterMovement : MonoBehaviour
     
     private void OnEnable()
     {
-        //Debug.Log(transform.localPosition + " is monsterMovement of " + transform.gameObject.name + transform.GetInstanceID());
         transform.localScale = new Vector3(gameData.startingScale, gameData.startingScale, 1);
         
         startMoving = true;
-        
+        WhichSide();  /// ??????????????????????????????????????????????
     }
- 
-    // Update is called once per frame
-    void Update()
+
+    private void WhichSide()
     {
-       
+        float currentXpos = transform.position.x;
+        if (currentXpos < 0.0f) leftSide = true;
+     }
+        
+    private void OnDisable()
+    {        
+        startMoving = false;
+    }
+    
+    private void Update()
+    {         
         if (startMoving)
         {
             Movement();
         }
-        
 
-        // game over event 
-        if(transform.localScale.x>gameData.deathScale)
-        {
-            
-            EventManager.TriggerEvent(gameData.GameOver);
-        }
+        EventsTrigger();
     }
 
-    
     private void Movement()
     {
         float newScaleComponents = (Time.deltaTime * gameData.scaleMult);
         transform.localScale += new Vector3(newScaleComponents, newScaleComponents,0);
-
-
     }
 
-
- 
-    private void OnDisable()
+    private void EventsTrigger()
     {
-        
-        startMoving = false;
+        if(transform.localScale.x > gameData.warningScale && transform.localScale.x < gameData.deathScale)  // could be written better
+        {
+            if(leftSide)
+            {                
+                EventManager.TriggerEvent(gameData.LeftGlassCracked);
+            }
+            else
+            {                
+                EventManager.TriggerEvent(gameData.RightGlassCracked);
+            }
+        }
+
+        // game over event 
+        else if(transform.localScale.x>gameData.deathScale)
+        {            
+            EventManager.TriggerEvent(gameData.GameOver);
+        }
 
     }
+    
+
+
+    
     
 
 }

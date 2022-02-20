@@ -11,9 +11,6 @@ public class AudioPlayer : MonoBehaviour
     
     public bool debug = false;
 
-    
-
-    
     public enum AudioAction
     {
         None,
@@ -21,8 +18,7 @@ public class AudioPlayer : MonoBehaviour
         Stop,
         Restart,
     }
-
-   
+       
     #region Unity Functions and functions that called
 
     private void Awake()
@@ -33,12 +29,10 @@ public class AudioPlayer : MonoBehaviour
             
         }               
     }
-
     
-
     #endregion
 
-    #region Public Functions for AudioManager to use
+    #region Public Functions for external usage
     public void PlayAudio(AudioClip[] _audioClip, AudioSource _audioSource, bool _fade = false)
     {
         
@@ -54,16 +48,20 @@ public class AudioPlayer : MonoBehaviour
     {
         StartCoroutine(AudioJob(AudioAction.Restart, _audioClip, _audioSource, _fade));
     }
+    #endregion
 
+    
 
-    private IEnumerator AudioJob(AudioAction _action, AudioClip[] _clip, AudioSource _source, bool _fade = false)
+    #region Private functions
+    
+    private IEnumerator AudioJob(AudioAction _action, AudioClip[] _clip, AudioSource _source, bool _fade)
     {
          
         float initialValue = 0.0f;
         float targetValue = audioClips.musicVolume; 
         AudioClip clip= ChooseRandomClip(_clip);
         _source.clip = clip;
-        //Log("add job "+ _action +" " +_source.clip.name);
+        
 
         switch (_action)
         {
@@ -82,8 +80,7 @@ public class AudioPlayer : MonoBehaviour
 
             case AudioAction.Restart:
                 _source.Stop();
-                _source.Play();
-                //Log("reastart " + _source.clip);
+                _source.Play();                
                 break;
         }
         if (_fade)
@@ -95,7 +92,7 @@ public class AudioPlayer : MonoBehaviour
             }
             
             float timePassed = 0.0f;
-            float lerpDuration = 1.0f;
+            float lerpDuration = 1.5f;
             while (timePassed <= lerpDuration)
             {
                 _source.volume = Mathf.Lerp(initialValue, targetValue, timePassed / lerpDuration);
@@ -104,16 +101,15 @@ public class AudioPlayer : MonoBehaviour
 
             }
             // if _timer was 0.9999 and Time.deltaTime was 0.01 we would not have reached the target
-            // make sure the volume is set to the value we want
+            // so this is to make sure the volume is set to the value we want
             _source.volume = targetValue;
-        }
-        
-
+        }      
     }
-    #endregion
 
-    #region Private functions
-
+    // i have scriptable object AudioClipS that stores almost all sfx I use in this game
+    //  and sometimes i need different amount of tracks to choose from - like flickering sounds not to be too repetitive
+    // I had to make the parameter into array to make it fit to all of the cases
+    // so when the clip is a single object, I use this one as a crutch
     private AudioClip ChooseRandomClip(AudioClip[] _audioClipArray)
     {
         
@@ -128,8 +124,6 @@ public class AudioPlayer : MonoBehaviour
             return (AudioClip)_audioClipArray[randomValue];
         }
     }
-
-
     #endregion
 
 

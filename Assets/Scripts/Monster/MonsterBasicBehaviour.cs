@@ -7,9 +7,8 @@ public class MonsterBasicBehaviour : MonsterParentClass
 
     private void OnMouseDown()
     {
-       
-        ClickToDeath();
-        Debug.Log("basic mod done");
+        
+        ClickToDeath();        
 
     }
 }
