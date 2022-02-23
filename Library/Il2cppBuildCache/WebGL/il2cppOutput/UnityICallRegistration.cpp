@@ -646,10 +646,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Camera_ScreenToViewportPoint_Injected();
 		Register_UnityEngine_Camera_ScreenToViewportPoint_Injected();
 
-		//System.Void UnityEngine.Camera::ScreenToWorldPoint_Injected(UnityEngine.Vector3&,UnityEngine.Camera/MonoOrStereoscopicEye,UnityEngine.Vector3&)
-		void Register_UnityEngine_Camera_ScreenToWorldPoint_Injected();
-		Register_UnityEngine_Camera_ScreenToWorldPoint_Injected();
-
 		//System.Void UnityEngine.Camera::SetStereoProjectionMatrix_Injected(UnityEngine.Camera/StereoscopicEye,UnityEngine.Matrix4x4&)
 		void Register_UnityEngine_Camera_SetStereoProjectionMatrix_Injected();
 		Register_UnityEngine_Camera_SetStereoProjectionMatrix_Injected();
@@ -1342,10 +1338,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_GameObject_get_layer();
 		Register_UnityEngine_GameObject_get_layer();
 
-		//System.String UnityEngine.GameObject::get_tag()
-		void Register_UnityEngine_GameObject_get_tag();
-		Register_UnityEngine_GameObject_get_tag();
-
 		//System.Void UnityEngine.GameObject::Internal_CreateGameObject(UnityEngine.GameObject,System.String)
 		void Register_UnityEngine_GameObject_Internal_CreateGameObject();
 		Register_UnityEngine_GameObject_Internal_CreateGameObject();
@@ -1947,14 +1939,6 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Joint2D_get_connectedBody();
 
 	//End Registrations for type : UnityEngine.Joint2D
-
-	//Start Registrations for type : UnityEngine.LayerMask
-
-		//System.Int32 UnityEngine.LayerMask::NameToLayer(System.String)
-		void Register_UnityEngine_LayerMask_NameToLayer();
-		Register_UnityEngine_LayerMask_NameToLayer();
-
-	//End Registrations for type : UnityEngine.LayerMask
 
 	//Start Registrations for type : UnityEngine.Light
 

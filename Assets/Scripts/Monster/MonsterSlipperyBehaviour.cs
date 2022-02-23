@@ -9,13 +9,19 @@ public class MonsterSlipperyBehaviour : MonsterParentClass
     [SerializeField] private GameData gameData;
     private Animator animator;
 
+    
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
         animator.Play(0);
     }
 
-    
+    public override void ClickToDeath()
+    {
+        base.ClickToDeath();
+    }
+
     private void OnMouseDown()
     {
         

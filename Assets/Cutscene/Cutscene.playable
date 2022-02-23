@@ -903,7 +903,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: on
+    attribute: isPulsing
     path: 
     classID: 114
     script: {fileID: 11500000, guid: 4ec2686366f5a66438276e742f7948c4, type: 3}
@@ -917,7 +917,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 162933192
+      attribute: 113907620
       script: {fileID: 11500000, guid: 4ec2686366f5a66438276e742f7948c4, type: 3}
       typeID: 114
       customType: 0
@@ -986,7 +986,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: on
+    attribute: isPulsing
     path: 
     classID: 114
     script: {fileID: 11500000, guid: 4ec2686366f5a66438276e742f7948c4, type: 3}
@@ -2866,11 +2866,11 @@ MonoBehaviour:
   - {fileID: -4998923062706416930}
   - {fileID: 2514099208928324455}
   - {fileID: -6430001704023524709}
+  - {fileID: 665801890218185276}
   - {fileID: 490200558930595478}
   - {fileID: -8055743175362914940}
   - {fileID: -2198498428011216990}
   - {fileID: -3967450817673612632}
-  - {fileID: 665801890218185276}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -5251,7 +5251,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: on
+    attribute: isPulsing
     path: 
     classID: 114
     script: {fileID: 11500000, guid: 4ec2686366f5a66438276e742f7948c4, type: 3}
@@ -5265,7 +5265,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 162933192
+      attribute: 113907620
       script: {fileID: 11500000, guid: 4ec2686366f5a66438276e742f7948c4, type: 3}
       typeID: 114
       customType: 0
@@ -5334,7 +5334,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: on
+    attribute: isPulsing
     path: 
     classID: 114
     script: {fileID: 11500000, guid: 4ec2686366f5a66438276e742f7948c4, type: 3}

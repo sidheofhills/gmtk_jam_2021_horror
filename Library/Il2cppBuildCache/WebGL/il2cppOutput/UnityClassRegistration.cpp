@@ -191,7 +191,7 @@ class SpriteShapeRenderer;
 class TilemapRenderer; 
 class TrailRenderer; 
 class VFXRenderer; 
-class Rigidbody; template <> void RegisterUnityClass<Rigidbody>(const char*);
+class Rigidbody; 
 class Rigidbody2D; template <> void RegisterUnityClass<Rigidbody2D>(const char*);
 namespace TextRenderingPrivate { class TextMesh; } 
 class Transform; template <> void RegisterUnityClass<Transform>(const char*);
@@ -290,7 +290,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 93 non stripped classes
+	//Total: 92 non stripped classes
 	//0. NavMeshAgent
 	RegisterUnityClass<NavMeshAgent>("AI");
 	//1. NavMeshProjectSettings
@@ -453,29 +453,27 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<Collider>("Physics");
 	//80. PhysicsManager
 	RegisterUnityClass<PhysicsManager>("Physics");
-	//81. Rigidbody
-	RegisterUnityClass<Rigidbody>("Physics");
-	//82. BoxCollider2D
+	//81. BoxCollider2D
 	RegisterUnityClass<BoxCollider2D>("Physics2D");
-	//83. CapsuleCollider2D
+	//82. CapsuleCollider2D
 	RegisterUnityClass<CapsuleCollider2D>("Physics2D");
-	//84. Collider2D
+	//83. Collider2D
 	RegisterUnityClass<Collider2D>("Physics2D");
-	//85. Joint2D
+	//84. Joint2D
 	RegisterUnityClass<Joint2D>("Physics2D");
-	//86. Physics2DSettings
+	//85. Physics2DSettings
 	RegisterUnityClass<Physics2DSettings>("Physics2D");
-	//87. PhysicsMaterial2D
+	//86. PhysicsMaterial2D
 	RegisterUnityClass<PhysicsMaterial2D>("Physics2D");
-	//88. Rigidbody2D
+	//87. Rigidbody2D
 	RegisterUnityClass<Rigidbody2D>("Physics2D");
-	//89. TextRendering::Font
+	//88. TextRendering::Font
 	RegisterUnityClass<TextRendering::Font>("TextRendering");
-	//90. UI::Canvas
+	//89. UI::Canvas
 	RegisterUnityClass<UI::Canvas>("UI");
-	//91. UI::CanvasGroup
+	//90. UI::CanvasGroup
 	RegisterUnityClass<UI::CanvasGroup>("UI");
-	//92. UI::CanvasRenderer
+	//91. UI::CanvasRenderer
 	RegisterUnityClass<UI::CanvasRenderer>("UI");
 
 }

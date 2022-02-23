@@ -21,8 +21,6 @@ public class DeadUI : MonoBehaviour
         fadeInFadeOut.FadeIn(gameOverText, lerpTime);
         fadeInFadeOut.FadeIn(newGameHelper, lerpTime,true);
 
-
-
     }
 
 

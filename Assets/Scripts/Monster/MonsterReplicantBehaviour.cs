@@ -17,12 +17,13 @@ public class MonsterReplicantBehaviour : MonsterParentClass
         spawningPefab = basicPefab;        
     }
 
+    
     private void OnMouseDown()
     {
         ReplicationMod();        
     }
 
-    public void ReplicationMod()
+    private void ReplicationMod()  
     {
         for (int i = 0; i < numberOfReplicants; i++)
         {
@@ -32,11 +33,19 @@ public class MonsterReplicantBehaviour : MonsterParentClass
         
     }
 
+    public override void ClickToDeath()
+    {
+        base.ClickToDeath();
+    }
+
+
     private void OnSecondPhaseEnds()
     {        
         spawningPefab = slipperyPefab;
         numberOfReplicants *= 2; 
     }
+
+    #region Event Listeners
     private void OnEnable()
     {        
         EventManager.StartListening(gameData.SecondPhaseEnds, OnSecondPhaseEnds);
@@ -45,4 +54,6 @@ public class MonsterReplicantBehaviour : MonsterParentClass
     {        
         EventManager.StopListening(gameData.SecondPhaseEnds, OnSecondPhaseEnds);
     }
+    #endregion
+
 }

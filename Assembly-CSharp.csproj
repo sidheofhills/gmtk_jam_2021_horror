@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,6 +53,9 @@
     <UnityVersion>2021.1.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\Lights\LightsStateMachine\States\LightTurnedOn.cs" />
     <Compile Include="Assets\Shaders\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterVisibility.cs" />
@@ -67,17 +70,11 @@
     <Compile Include="Assets\Scripts\Penta\PentaDarkAnimation.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponBehaviour.cs" />
     <Compile Include="Assets\Scripts\Candles\CandlesMain.cs" />
-    <Compile Include="Assets\Scripts\Lights\LightManager.cs" />
-    <Compile Include="Assets\Scripts\archive\AudioCollector.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonBlinkingUI.cs" />
-    <Compile Include="Assets\Scripts\Lights\LampLight.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterMovement.cs" />
     <Compile Include="Assets\Scripts\Managers\InputController.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponObjectPool_Simple.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterSpawner.cs" />
-    <Compile Include="Assets\Scripts\archive\ChangingEnemyBehaviorOverTime.cs" />
-    <Compile Include="Assets\Scripts\archive\SelectionManager.cs" />
-    <Compile Include="Assets\Scripts\archive\LightsAudioManager.cs" />
     <Compile Include="Assets\Scripts\Cutscene\CreditsCutscene.cs" />
     <Compile Include="Assets\Scripts\Penta\PentaDarkAudioManager.cs" />
     <Compile Include="Assets\Scripts\Lights\LightsStateMachine\States\LightTurnedOff.cs" />
@@ -92,25 +89,17 @@
     <Compile Include="Assets\Scripts\Lights\LightsStateMachine\LightState.cs" />
     <Compile Include="Assets\Scripts\Managers\SceneManager.cs" />
     <Compile Include="Assets\Scripts\Penta\PentaWhiteAnimation.cs" />
-    <Compile Include="Assets\Scripts\archive\GameOverTrigger.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponSpawner.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterKillCounter.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterReturn.cs" />
-    <Compile Include="Assets\Scripts\Lights\AllLightsOn.cs" />
     <Compile Include="Assets\Scripts\Penta\PentaWhiteAudioManager.cs" />
-    <Compile Include="Assets\Scripts\archive\OnBordersEnter.cs" />
-    <Compile Include="Assets\Scripts\archive\AudioTitle.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterReplicantBehaviour.cs" />
-    <Compile Include="Assets\Scripts\archive\SpawnNightmares.cs" />
     <Compile Include="Assets\Scripts\Utilities\FitFunction.cs" />
-    <Compile Include="Assets\Scripts\archive\ClockUI.cs" />
-    <Compile Include="Assets\Scripts\archive\ShadowSwitcher.cs" />
     <Compile Include="Assets\Scripts\Lights\LightsStateMachine\LightsStateMachine.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterObjectPool_Advanced.cs" />
     <Compile Include="Assets\Scripts\Lights\LightsStateMachine\SingleLight.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonSound.cs" />
     <Compile Include="Assets\Scripts\WarningCrackedGlass.cs" />
-    <Compile Include="Assets\Scripts\archive\AudioSources.cs" />
     <Compile Include="Assets\Scripts\Data\GameData.cs" />
     <Compile Include="Assets\Scripts\Lights\LightsStateMachine\States\LightFlickering.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponAudioManager.cs" />
@@ -118,13 +107,10 @@
     <Compile Include="Assets\Scripts\Monster\MonsterSpawnManager.cs" />
     <Compile Include="Assets\Graphics\proto_art\Scripts\PositionRendererSorter.cs" />
     <Compile Include="Assets\Scripts\Candles\CandlesGrp.cs" />
-    <Compile Include="Assets\Scripts\archive\SwitcherUI.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponOnEnable.cs" />
-    <Compile Include="Assets\Scripts\archive\SlipperyMod.cs" />
     <Compile Include="Assets\Scripts\UI\GameWinTextFade.cs" />
     <Compile Include="Assets\Scripts\Lights\LightsAudioSpectrum.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioClips.cs" />
-    <Compile Include="Assets\Scripts\archive\Nightmares.cs" />
     <Compile Include="Assets\Scripts\Utilities\FadeInFadeOut.cs" />
     <Compile Include="Assets\Scripts\Cutscene\CutsceneManager.cs" />
   </ItemGroup>

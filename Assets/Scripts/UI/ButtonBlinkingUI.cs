@@ -23,8 +23,6 @@ public class ButtonBlinkingUI : MonoBehaviour
     private void Update()
     {
         BlinkingSetup();
-        
-        
     }
 
 
@@ -38,17 +36,11 @@ public class ButtonBlinkingUI : MonoBehaviour
             if (Time.frameCount % blinkingSpeedFrame == 0)
             {
                 float noise = Random.Range(0f,1f);
-                blinkingText.alpha = noise;
-                //Debug.Log(noise + " " + blinkingText.alpha);
+                blinkingText.alpha = noise;                
             }
                 yield return null;
             }
            
-            
-            
-           
-        
-
     }
     public void Blinking()   // for welcomeText;
     {

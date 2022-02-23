@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterSpawnManager : MonoBehaviour
@@ -40,19 +38,7 @@ public class MonsterSpawnManager : MonoBehaviour
        SpawnLogic();
     }
 
-    private void StartSpawning()  //чтобы можно было сделать офсет на споун
-    {
-        StartCoroutine(WaitIfLeftSide());
-        spawn = true;
-    }
-
-    private IEnumerator WaitIfLeftSide()
-    {
-        if (leftSide)
-        {
-            yield return new WaitForSeconds(UnityEngine.Random.value * waitingOffsetTime);
-        }
-    }
+    
     private void SpawnLogic()
     {
         if (spawn)
@@ -62,12 +48,13 @@ public class MonsterSpawnManager : MonoBehaviour
             {
                 timer = 0f;
                 SpawnBundle(mainPrefab);
-                //yield return new WaitForSeconds(UnityEngine.Random.value * (waitingOffsetTime / 2f));
+                
                 SpawnBundle(additionalPrefab);
             }
             timer += Time.deltaTime;
         }
     }
+
     private void SpawnBundle(GameObject prefab)
     {
         monsterSpawner.SpawnFromThisPoint(prefab, this.transform.position);                                                                                                                                        
@@ -75,7 +62,6 @@ public class MonsterSpawnManager : MonoBehaviour
     }
 
    
-
     //  чтобы можно было побалансить, если понадобится
     private void InitialPrefabSetup()
     {
@@ -108,6 +94,26 @@ public class MonsterSpawnManager : MonoBehaviour
                
     }
 
+    private void StartSpawning()  //чтобы можно было сделать офсет на споун
+    {
+        StartCoroutine(WaitIfLeftSide());
+        spawn = true;
+    }
+
+    private IEnumerator WaitIfLeftSide()  // break simultaneous spawn
+    {
+        if (leftSide)
+        {
+            yield return new WaitForSeconds(UnityEngine.Random.value * waitingOffsetTime);
+        }
+    }
+    private void EndSpawning()
+    {
+        spawn = false;
+    }
+
+
+    
     #region Events Functions Enable/Disable
     private void OnEnable()
     {
@@ -116,6 +122,7 @@ public class MonsterSpawnManager : MonoBehaviour
         EventManager.StartListening(gameData.SecondPhaseEnds, OnSecondPhaseEnds);
         EventManager.StartListening(gameData.ThirdPhaseEnds, OnThirdPhaseEnds);
         EventManager.StartListening(gameData.MonstersSpawn, StartSpawning);
+        EventManager.StartListening(gameData.OnDarkPentaDisappearing, EndSpawning);
 
 
     }
@@ -125,6 +132,7 @@ public class MonsterSpawnManager : MonoBehaviour
         EventManager.StopListening(gameData.SecondPhaseEnds, OnSecondPhaseEnds);
         EventManager.StopListening(gameData.ThirdPhaseEnds, OnThirdPhaseEnds);
         EventManager.StopListening(gameData.MonstersSpawn, StartSpawning);
+        EventManager.StopListening(gameData.OnDarkPentaDisappearing, EndSpawning);
 
     }
     #endregion

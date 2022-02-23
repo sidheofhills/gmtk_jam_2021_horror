@@ -6,7 +6,7 @@ using System;
 public class MonsterReturn : MonoBehaviour
 {
     private MonsterObjectPool_Advanced objectPool;
-    public GameData gameData;
+    [SerializeField] private GameData gameData;
 
 
     void Start()
@@ -21,7 +21,6 @@ public class MonsterReturn : MonoBehaviour
         if (objectPool != null)
         {
             objectPool.ReturnGameObject(this.gameObject);
-            
             
         }
         

@@ -7,7 +7,7 @@ public class PentaWhiteAnimation : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     
     [SerializeField] GameData gameData;
-    [SerializeField] bool on;  //pulsing
+    [SerializeField] bool isPulsing;  
     
     private bool calledIt; //for single call in update
     private float lerpedValue;  
@@ -27,7 +27,7 @@ public class PentaWhiteAnimation : MonoBehaviour
     }
     private void Update()
     {
-        if (on) //pulsing
+        if (isPulsing) 
         {
             HighFrequecyPulsing();            
             if((!calledIt) && TryGetComponent<PentaWhiteAudioManager>( out PentaWhiteAudioManager pentaWhiteAudioManager))

@@ -12,11 +12,8 @@ public class KnockUI : MonoBehaviour  //не обязаьеьный скрипт  с исчезающей кноп
     [SerializeField] GameData gameData;
 
     private void Awake()
-    {
-        
-        container.gameObject.SetActive(true);
-        
-        
+    {        
+        container.gameObject.SetActive(true);        
     }
     
    

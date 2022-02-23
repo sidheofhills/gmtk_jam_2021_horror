@@ -65,14 +65,12 @@ public class PentaWhiteAudioManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventManager.StartListening(gameData.OnWhitePentaDissapearing, OnWhitePentaDissapearing);
-        //EventManager.StartListening(gameData.MonstersSpawn, OnCandlesLit);
+        EventManager.StartListening(gameData.OnWhitePentaDissapearing, OnWhitePentaDissapearing);        
     }
 
     private void OnDisable()
     {
-        EventManager.StopListening(gameData.OnWhitePentaDissapearing, OnWhitePentaDissapearing);
-        //EventManager.StopListening(gameData.MonstersSpawn, OnCandlesLit);
+        EventManager.StopListening(gameData.OnWhitePentaDissapearing, OnWhitePentaDissapearing);      
 
     }
 

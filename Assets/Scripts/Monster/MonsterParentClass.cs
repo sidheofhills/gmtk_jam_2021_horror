@@ -1,14 +1,16 @@
 using UnityEngine;
 
-public  class MonsterParentClass : MonoBehaviour //colud be an abstract class as well
+public abstract class MonsterParentClass : MonoBehaviour
 {
-    // the behavior that shared among all of the monsters
     protected WeaponSpawner weaponSpawner;
     private void Awake()
     {
         weaponSpawner = FindObjectOfType<WeaponSpawner>();  
     }
-    protected void ClickToDeath()
+
+
+    // the behavior that shared among all of the monsters
+    public virtual void ClickToDeath()
     {        
         weaponSpawner.SpawnFromThisPoint(this.gameObject.transform.position, this.gameObject.transform.localScale);        
         // play death animation
