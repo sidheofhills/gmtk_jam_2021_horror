@@ -15,9 +15,9 @@ public class LightsAudioSpectrum : MonoBehaviour  // this one is to flick with a
     public float FlickeringValue { get; private set; }
 
     [SerializeField] private float bias;
-    [SerializeField] private float fitVal = 200.0f;
+    [SerializeField] private float fitVal;
 
-    private void Start()
+    private void Awake()
     {
         localAudioSource = GetComponent<AudioSource>(); 
     }
@@ -28,15 +28,14 @@ public class LightsAudioSpectrum : MonoBehaviour  // this one is to flick with a
 
         if (spectrumData != null && spectrumData.Length > 0)
         {
-            spectrumValue = spectrumData[0] * 100;
+            spectrumValue = spectrumData[0] * fitVal;
             
             
             prevSpectrumVal = curSpectrumVal;
             curSpectrumVal = spectrumValue;
             if(prevSpectrumVal > bias && curSpectrumVal <= bias)
             {
-                FlickeringValue = Mathf.Clamp01(Mathf.Pow(curSpectrumVal*fitVal,2));               
-                
+                FlickeringValue = Mathf.Clamp01(Mathf.Pow(curSpectrumVal,2f));
             }
 
         }

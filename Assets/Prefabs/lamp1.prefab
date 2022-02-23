@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1741219543622688866}
-  - component: {fileID: -3600307072545973974}
   - component: {fileID: 8917274445495327278}
   - component: {fileID: -5013903621379989015}
+  - component: {fileID: 2450083062771708416}
+  - component: {fileID: 3671246634357844289}
   m_Layer: 10
   m_Name: lamp1
   m_TagString: lamp
@@ -37,25 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-3600307072545973974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741219543622688877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd53768aacd30f45b6809acfbe2c1e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftLamp: 1
-  manualLampSwitchOff: 0
-  gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
-  audioClips: {fileID: 11400000, guid: 85427a3c1b9bd15488bf9969a8c03344, type: 2}
-  lightBulbsNormal:
-  - {fileID: 8300000, guid: 64f66cec20cf5754ca8c92bdbbb04c77, type: 3}
-  testAlpha: 0
 --- !u!114 &8917274445495327278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c0378df80ada9e47893642df899ad32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bias: 0.2
-  fitVal: 200
+  bias: 0.9
+  fitVal: 100
 --- !u!82 &-5013903621379989015
 AudioSource:
   m_ObjectHideFlags: 0
@@ -167,6 +149,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2450083062771708416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741219543622688877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeeadb2d777950442a773e83266e3771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightBulbsNormal:
+  - {fileID: 8300000, guid: 64f66cec20cf5754ca8c92bdbbb04c77, type: 3}
+  audioClips: {fileID: 11400000, guid: 85427a3c1b9bd15488bf9969a8c03344, type: 2}
+--- !u!114 &3671246634357844289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741219543622688877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634f0aae87d2ab445ad9510fbf2f410d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLamp: 1
+  gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
+  mayBlink: 0
+  manualLampSwitchOff: 0
+  maxTimeDuration: 5
 --- !u!1001 &478595063222754516
 PrefabInstance:
   m_ObjectHideFlags: 0

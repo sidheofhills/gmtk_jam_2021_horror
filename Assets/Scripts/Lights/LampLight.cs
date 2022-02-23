@@ -40,8 +40,9 @@ public class LampLight : MonoBehaviour
     {        
         if (Flickering && LightOn==1)
         {
-            FlickeringAudio();
+            FlickeringOn();
         }
+       
 
         if(manualLampSwitchOff && !gameData.cutSceneDone)  // for cutscene
         {
@@ -59,7 +60,7 @@ public class LampLight : MonoBehaviour
         spriteRenderer[3].color = new Vector4(spriteRenderer[3].color.r, spriteRenderer[3].color.g, spriteRenderer[3].color.b, 1-value);
     }
 
-    private void FlickeringAudio()
+    private void FlickeringOn()
     {        
         spriteRenderer[0].color = new Vector4(spriteRenderer[0].color.r, spriteRenderer[0].color.g, spriteRenderer[0].color.b, audioSpectrum.FlickeringValue);
         spriteRenderer[1].color = new Vector4(spriteRenderer[1].color.r, spriteRenderer[1].color.g, spriteRenderer[1].color.b, audioSpectrum.FlickeringValue);
@@ -70,13 +71,16 @@ public class LampLight : MonoBehaviour
     public void BeforeKnock() // i only needed them to occasionally flicker with lights all on
     {
         LightOn = 1;
-        Flickering = UnityEngine.Random.Range(0, 6) % 2 == 0;
-        SpritesAlphaSwitcher(LightOn);
+        Flickering = UnityEngine.Random.Range(0, 2) == 0;
+        if (!Flickering)
+        {
+            SpritesAlphaSwitcher(LightOn);
+        }
         PlayLightSound(LightOn);        
     }
 
     // continuous cycle of lights turning on and off during the game. used only in LightManager
-    public IEnumerator RunJob()
+    public IEnumerator RunJobBlinking()
     {        
         SpritesAlphaSwitcher(LightOn);
 
@@ -88,26 +92,23 @@ public class LampLight : MonoBehaviour
 
         SpritesAlphaSwitcher(1-LightOn);        
 
-        lightManager.LampEnqueue(this);                       
+        lightManager.BlinkingLampEnqueue(this);                       
     }
 
-    
-    private void PlayLightSound(int value) // could be done better
-    {      
-        if (value==1)
-        {            
-            if (Flickering) AudioPlayer.audioPlayerInstance.PlayAudio(audioClips.lightBulbsFlickering, lightAudioSource); 
+    public void NoFlickering()
+    {
+        LightOn = 1;
+        SpritesAlphaSwitcher(LightOn);
 
-            else   AudioPlayer.audioPlayerInstance.PlayAudio(lightBulbsNormal, lightAudioSource);             
-        }
-
-        else if (lightAudioSource.isPlaying)
-        {
-            if (Flickering) AudioPlayer.audioPlayerInstance.StopAudio(audioClips.lightBulbsFlickering, lightAudioSource);
-
-            else    AudioPlayer.audioPlayerInstance.StopAudio(lightBulbsNormal, lightAudioSource);            
-        }               
+        PlayLightSound(LightOn);
+        
     }
+                                     
+    private void PlayLightSound(int value)
+    {
+
+    }
+
 
 
 }

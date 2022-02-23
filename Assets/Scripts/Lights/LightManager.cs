@@ -6,9 +6,9 @@ using Random = UnityEngine.Random;
 
 public class LightManager : MonoBehaviour
 {
-    public LampLight[] initialLampArray;
-    public LampLight[] flickeringArray;
-    private readonly Queue<LampLight> LampQueue = new Queue<LampLight>();
+    [SerializeField] private LampLight[] initialLampArray;
+    [SerializeField] private LampLight[] noFlickeringArray;    
+    private readonly Queue<LampLight> BlinkingLampQueue = new Queue<LampLight>();
     [SerializeField] GameData gameData;
 
     [SerializeField] private int maxTimeDuration;
@@ -24,27 +24,28 @@ public class LightManager : MonoBehaviour
     {
         lampsCounter = 0;
         lLampsCounter = 0;
-        rLampsCounter = 0;        
+        rLampsCounter = 0;
+        
     }
 
     #region Private Functions
-    private void InitialEnqueue()  //preparation of the lights 
+    
 
+    private void EnqueueAfterSpawn() //preparation of the lights 
     {
-        foreach (LampLight lamp in flickeringArray)
+        foreach (LampLight lamp in noFlickeringArray)
         {
-            lamp.BeforeKnock();
+            lamp.NoFlickering();
         }
-        
         foreach (LampLight lamp in initialLampArray)
-        {            
-            LampEnqueue(lamp);           // this one keeps rolling because throughout the game lamps keep queuing
+        {
+            BlinkingLampEnqueue(lamp);           // this one keeps rolling because throughout the game lamps keep queuing
         }
     }
 
     private void LampSetupper() //is called at the start spawn and then when lamp enqueues
     {
-        currentLampLight = LampQueue.Dequeue();  
+        currentLampLight = BlinkingLampQueue.Dequeue();  
         currentLampLight.TimeDuration = Random.Range(0.5f,2f) * maxTimeDuration;
         currentLampLight.LightOn = Random.Range(0,2);
         
@@ -64,18 +65,18 @@ public class LightManager : MonoBehaviour
             }
 
         
-        StartCoroutine(currentLampLight.RunJob());        
+        StartCoroutine(currentLampLight.RunJobBlinking());        
         
     }
 
-    private Tuple<int, int, int> CountersUpdate(int value)  
+    private void CountersUpdate(int value)  
     {
         if (value == 1 || value == -1)
         {
             lampsCounter = lampsCounter >= 0 ? lampsCounter + value : lampsCounter;
             lLampsCounter = currentLampLight.LeftLamp == true ? lLampsCounter + value : lLampsCounter;
             rLampsCounter = currentLampLight.LeftLamp == false ? rLampsCounter + value : rLampsCounter;
-            return new Tuple<int, int, int>(lampsCounter, lLampsCounter, rLampsCounter);
+            
             
         }
         else
@@ -83,8 +84,6 @@ public class LightManager : MonoBehaviour
             if (lampsCounter < 0)  Debug.Log("lamps counter cannot be less then 0");
             
             else  Debug.Log("you're trying to change the value by more than 1. this is not what i was made for");
-                    
-            return null;
         }
     }
 
@@ -93,21 +92,22 @@ public class LightManager : MonoBehaviour
 
     #region Public Functions
     // it's probably no good that lightManager and lampLights call out each others functions
-    public void LampEnqueue(LampLight lampLight)  //for LampLight to call it
+    public void BlinkingLampEnqueue(LampLight lampLight)  //for LampLight to call it
     {
-        LampQueue.Enqueue(lampLight);
+        BlinkingLampQueue.Enqueue(lampLight);
         LampSetupper();
     }
+    
 
     #endregion
 
     private void OnEnable()
     {
-        EventManager.StartListening(gameData.MonstersSpawn, InitialEnqueue);
+        EventManager.StartListening(gameData.MonstersSpawn, EnqueueAfterSpawn);
     }
     private void OnDisable()
     {
-        EventManager.StopListening(gameData.MonstersSpawn, InitialEnqueue);
+        EventManager.StopListening(gameData.MonstersSpawn, EnqueueAfterSpawn);
         
 
     }

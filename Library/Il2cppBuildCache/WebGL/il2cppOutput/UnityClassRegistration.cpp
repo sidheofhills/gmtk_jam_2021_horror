@@ -106,7 +106,7 @@ class CapsuleCollider2D; template <> void RegisterUnityClass<CapsuleCollider2D>(
 class CircleCollider2D; 
 class CompositeCollider2D; 
 class EdgeCollider2D; 
-class PolygonCollider2D; template <> void RegisterUnityClass<PolygonCollider2D>(const char*);
+class PolygonCollider2D; 
 class TilemapCollider2D; 
 class ConstantForce; 
 class Effector2D; 
@@ -290,7 +290,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 94 non stripped classes
+	//Total: 93 non stripped classes
 	//0. NavMeshAgent
 	RegisterUnityClass<NavMeshAgent>("AI");
 	//1. NavMeshProjectSettings
@@ -467,17 +467,15 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<Physics2DSettings>("Physics2D");
 	//87. PhysicsMaterial2D
 	RegisterUnityClass<PhysicsMaterial2D>("Physics2D");
-	//88. PolygonCollider2D
-	RegisterUnityClass<PolygonCollider2D>("Physics2D");
-	//89. Rigidbody2D
+	//88. Rigidbody2D
 	RegisterUnityClass<Rigidbody2D>("Physics2D");
-	//90. TextRendering::Font
+	//89. TextRendering::Font
 	RegisterUnityClass<TextRendering::Font>("TextRendering");
-	//91. UI::Canvas
+	//90. UI::Canvas
 	RegisterUnityClass<UI::Canvas>("UI");
-	//92. UI::CanvasGroup
+	//91. UI::CanvasGroup
 	RegisterUnityClass<UI::CanvasGroup>("UI");
-	//93. UI::CanvasRenderer
+	//92. UI::CanvasRenderer
 	RegisterUnityClass<UI::CanvasRenderer>("UI");
 
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.Lights.LightsStateMachine;
 
 public class MonsterVisibility : MonoBehaviour
 {
@@ -20,9 +21,9 @@ public class MonsterVisibility : MonoBehaviour
     
     
     private GameObject chosenLampsContainer;       
-    private List<LampLight> chosenLampList = new List<LampLight>();
+    private List<SingleLight> chosenLampList = new List<SingleLight>();
     
-    private float lightOnValue;  // value that is taken from current light's LightOn property
+    private float lightValue;  // value that is taken from current light's LightOn property
     private float visiblityValue; //value that is taken from all the parameters
 
     private int lampOrder; 
@@ -72,7 +73,7 @@ public class MonsterVisibility : MonoBehaviour
         prevAnimCurveValue = visScaleDependancyCurve.Evaluate(prevScaleValFitted);
         curAnimCurveValue = visScaleDependancyCurve.Evaluate(curScaleValFitted);
 
-        lightOnValue = chosenLampList[lampOrder].LightOn;
+        lightValue = chosenLampList[lampOrder].LightValue;
 
         if (curAnimCurveValue < zeroThreshold && prevAnimCurveValue > zeroThreshold) 
         {
@@ -82,7 +83,7 @@ public class MonsterVisibility : MonoBehaviour
             LayersOrderUpdate();
         }
 
-        visiblityValue = lightOnValue * curAnimCurveValue;
+        visiblityValue = lightValue * curAnimCurveValue;
 
         spriteRenderers[1].color = new Vector4(spriteRenderers[1].color.r, spriteRenderers[1].color.g, spriteRenderers[0].color.b, visiblityValue);
 
@@ -134,9 +135,9 @@ public class MonsterVisibility : MonoBehaviour
     }
 
 
-    private List<LampLight> LampListMaker()
+    private List<SingleLight> LampListMaker()
     {
-        LampLight[] lampStorage = chosenLampsContainer.GetComponentsInChildren<LampLight>();
+        SingleLight[] lampStorage = chosenLampsContainer.GetComponentsInChildren<SingleLight>();
 
         chosenLampList.AddRange(lampStorage);
 

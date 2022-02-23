@@ -9,12 +9,12 @@ public class MonsterObjectPool_Advanced : MonoBehaviour
     /// this one was made with the help f https://onewheelstudio.com/blog/2020/7/15/object-pooling
     /// but unlike with event manager i don't have a lot of questions here
     /// </summary>
-    private Dictionary<string, Queue<GameObject>> objectPool = new Dictionary<string, Queue<GameObject>>();  //create and initialize dictionary
+    private Dictionary<string, Stack<GameObject>> objectPool = new Dictionary<string, Stack<GameObject>>();  //create and initialize dictionary
     
     
     public GameObject GetObject(GameObject gameObject)
     {
-        if (objectPool.TryGetValue(gameObject.name, out Queue<GameObject> objectList))  //if there's smth in OP get out new variable objectList
+        if (objectPool.TryGetValue(gameObject.name, out Stack<GameObject> objectList))  //if there's smth in OP get out new variable objectList
         {
             if(objectList.Count==0)
             {                
@@ -22,7 +22,7 @@ public class MonsterObjectPool_Advanced : MonoBehaviour
             }
             else
             {
-                GameObject _object = objectList.Dequeue();    
+                GameObject _object = objectList.Pop();    
                 _object.SetActive(false); // i need this so that i could place them correctly first and then turn on
                 return _object;                
             }
@@ -45,14 +45,14 @@ public class MonsterObjectPool_Advanced : MonoBehaviour
 
     public void ReturnGameObject(GameObject gameObject)
     {
-        if (objectPool.TryGetValue(gameObject.name, out Queue<GameObject> objectList))
+        if (objectPool.TryGetValue(gameObject.name, out Stack<GameObject> objectList))
         {
-            objectList.Enqueue(gameObject);            
+            objectList.Push(gameObject);            
         }
         else
         {
-            Queue<GameObject> newObjectQueue = new Queue<GameObject>();
-            newObjectQueue.Enqueue(gameObject);
+            var newObjectQueue = new Stack<GameObject>();
+            newObjectQueue.Push(gameObject);
             objectPool.Add(gameObject.name, newObjectQueue);           
         }
         
