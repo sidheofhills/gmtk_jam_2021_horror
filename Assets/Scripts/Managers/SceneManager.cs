@@ -8,39 +8,26 @@ public class SceneManager : MonoBehaviour
 {
     public GameData gameData;                                            
     private Action onGameOverListener;
-    private Action sceneLoaderListener;
+    
 
     private int sceneName;
 
 
     private void Awake()
     {
-        gameData.enemyNum = 0;
-        gameData.selectedObject = null;
+        
+        gameData.enemyNumKilled = 0;
+        
         gameData.weaponSpawnTransform = new Vector3(0,0,0);
-        Debug.Log("awakeSceneMan" + gameData.enemyNum + gameData.selectedObject);
+        
         onGameOverListener = new Action(OnGameOver);  //слушающий, чтобы запустить функцию
-        //sceneLoaderListener = new Action(SceneLoader);
-        string test = gameData.GameWin;
-        Debug.Log(test);
+        
+        
+
+        
     }
 
 
-    private void Update()
-    {
-        //test
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            EventManager.TriggerEvent(gameData.MainMenu);
-        }
-        else if (Input.GetKeyDown(KeyCode.N))
-        {
-            EventManager.TriggerEvent(gameData.GameStart);
-        }
-        //OnKeyboardInput();
-
-
-    }
     
 
 

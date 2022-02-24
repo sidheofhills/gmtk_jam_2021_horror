@@ -9,10 +9,8 @@ public class AudioClips : ScriptableObject
 
     [Header("BG Music")]
     
-    public AudioClip[] mainMenuMusic;
-    public AudioClip[] mainLevelMusic;
-    public AudioClip[] gameOverMenuMusic;
-    public AudioClip[] gameWinMenuMusic;
+    public AudioClip[] bgMusic;
+    
 
     
 

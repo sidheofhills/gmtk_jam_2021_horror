@@ -36,7 +36,7 @@ public class TimeManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(KnockUI.HeKnocked)
+        if(gameData.startSpawn)
         {
             TimeLeftToHangOn -= Time.deltaTime;
             if(TimeLeftToHangOn<=0)
@@ -56,7 +56,7 @@ public class TimeManager : MonoBehaviour
                 Minute = 0;
                 EventManager.TriggerEvent(gameData.OnHour);
             }
-            else if (Minute%2==0 && KnockUI.HeKnocked)
+            else if (Minute%2==0 && gameData.startSpawn)
             {
                 EventManager.TriggerEvent(gameData.OnTwoMinutes);  // MAYBE TEN IS WAY TOo SLOW AND A MINUTE WILL DO
             }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class MonsterVisibility : MonoBehaviour
 {
     [SerializeField]  private GameData gameData;
-    private SpriteRenderer[] spriteRenderer;
+    private SpriteRenderer[] spriteRenderers;
     [SerializeField] AnimationCurve visScaleDependancyCurve;
     
     
@@ -34,7 +34,7 @@ public class MonsterVisibility : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {       
-        spriteRenderer = GetComponentsInChildren<SpriteRenderer>();  //for sorting layer      
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();  //for sorting layer      
 
     }
 
@@ -78,7 +78,7 @@ public class MonsterVisibility : MonoBehaviour
 
         visiblityValue = lightOnValue * curAnimCurveValue;
 
-        spriteRenderer[1].color = new Vector4(spriteRenderer[1].color.r, spriteRenderer[1].color.g, spriteRenderer[0].color.b, visiblityValue);
+        spriteRenderers[1].color = new Vector4(spriteRenderers[1].color.r, spriteRenderers[1].color.g, spriteRenderers[0].color.b, visiblityValue);
 
 
     }
@@ -88,17 +88,19 @@ public class MonsterVisibility : MonoBehaviour
         private void OnEnable()
     {
         
+            spriteRenderers[1].color *= Random.ColorHSV(0f, 1f,0.5f,0.5f);  
         
-        
-        //light on 
-        ChosenLampListAssignment();
-        
+        //ANIMATION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //light on 
+            ChosenLampListAssignment();
 
-        lampOrder = 0;
-        layerBodyOrder = 0;
-        layerEyesOrder = 1;
 
-        LayersOrderUpdate();
+            lampOrder = 0;
+            layerBodyOrder = 0;
+            layerEyesOrder = 1;
+
+            LayersOrderUpdate();
+        
     }
 
     private void ChosenLampListAssignment()
@@ -123,8 +125,8 @@ public class MonsterVisibility : MonoBehaviour
 
     private void LayersOrderUpdate()
     {
-        spriteRenderer[0].sortingOrder = layerEyesOrder;
-        spriteRenderer[1].sortingOrder = layerBodyOrder;
+        spriteRenderers[0].sortingOrder = layerEyesOrder;
+        spriteRenderers[1].sortingOrder = layerBodyOrder;
         
     }
 }

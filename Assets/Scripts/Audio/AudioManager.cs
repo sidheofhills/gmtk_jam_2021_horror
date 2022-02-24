@@ -8,29 +8,22 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClips audioClips;
      private AudioPlayer audioPlayer;
     [SerializeField] private AudioSource bgAudioSource;
-    [SerializeField] private AudioSource envAudioSource;
+    
     [SerializeField] private AudioSource transAudioSource;
     private AudioSource[] allAudioSources;
+    private int curSceneNumber;
+    private void Awake()
+    {
+        audioPlayer = GetComponent<AudioPlayer>();
+        curSceneNumber = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        // Õ¿ƒŒ œ≈–≈ƒ≈À¿“‹ Õ¿ ƒ∆≈Õ≈–» » ‘”Õ÷»ﬁ œ–Œ»√–€¬¿Õ»ﬂ »À»  ¿ -“Œ  —ƒ≈À¿“‹ “¿ , ◊“Œ¡€ ¡€À¿ œ≈–≈√–”« ¿ »À» ◊“Œ-À»¡Œ ≈Ÿ≈
+    }
 
     private void Start()
     {
-        audioPlayer = GetComponent<AudioPlayer>();
+        //audioPlayer.PlayAudio(audioClips.bgMusic[curSceneNumber], bgAudioSource, true);
     }
-    private void Update()
-    {
-        /*if (Input.GetKeyDown(KeyCode.R))
-            audioPlayer.PlayAudio(audioClips.mainLevelMusic, bgAudioSource, true);
-        if (Input.GetKeyDown(KeyCode.T))
-            audioPlayer.StopAudio(audioClips.mainLevelMusic, bgAudioSource, true);
-        if (Input.GetKeyDown(KeyCode.Y))
-            audioPlayer.PlayAudio(audioClips.knocking, envAudioSource);
-        if (Input.GetKeyDown(KeyCode.U))
-            audioPlayer.RestartAudio(audioClips.mainLevelMusic, bgAudioSource);
-        if (Input.GetKeyDown(KeyCode.I))
-            audioPlayer.PlayAudio(audioClips.lightBulbsFlickering, envAudioSource);
-            //audioPlayer.PlayAudio(AudioTitle.transitionToExit);*/
-    }
-
+   
  
 
     /// <summary>
@@ -47,50 +40,13 @@ public class AudioManager : MonoBehaviour
         audioPlayer.PlayAudio(audioClips.transitionToMainLevel, transAudioSource, true);
     }
 
-  
-    private void SkipStart()  
+
+
+    public void OnKnock()
     {
-        
-        audioPlayer.StopAudio(CurrentClipPrep(envAudioSource.clip), envAudioSource, true);
-        
+        audioPlayer.PlayAudio(audioClips.bgMusic, bgAudioSource, true);
     }
 
-    
-
-    private void GameWin()
-    {
-        audioPlayer.PlayAudio(audioClips.gameWinMenuMusic, bgAudioSource, true);
-    }
-
-    private void GameOver()
-    {
-        audioPlayer.PlayAudio(audioClips.gameOverMenuMusic, bgAudioSource, true);
-    }
-
-    private void MainMenu()
-    {
-        audioPlayer.PlayAudio(audioClips.mainLevelMusic, bgAudioSource, true);
-    }
-    private void OnEnable()
-    {
-        EventManager.StartListening(gameData.GameOver, GameOver);
-        EventManager.StartListening(gameData.MainMenu, MainMenu);
-        
-        EventManager.StartListening(gameData.GameWin, GameWin);
-        EventManager.StartListening(gameData.Skip, SkipStart);  //ny
-
-    }
-
-    private void OnDisable()
-    {
-        EventManager.StopListening(gameData.GameOver, GameOver);
-        EventManager.StopListening(gameData.MainMenu, MainMenu);
-        
-        EventManager.StopListening(gameData.GameWin, GameWin);
-        EventManager.StopListening(gameData.Skip, SkipStart);
-        Dispose();
-
-    }
     private void Dispose()
     {
         allAudioSources = FindObjectsOfType<AudioSource>();
@@ -108,6 +64,17 @@ public class AudioManager : MonoBehaviour
         AudioClip[] arrayClip = null;
         arrayClip[0] = inputClip;
         return arrayClip;//???????????????????????????????????????
+    }
+
+    private void OnEnable()
+    {
+        EventManager.StartListening(gameData.MonstersSpawn, OnKnock);
+    }
+    private void OnDisable()
+    {
+        EventManager.StopListening(gameData.MonstersSpawn, OnKnock);
+        Dispose();
+
     }
 
 }

@@ -25,10 +25,18 @@ public class LightManager : MonoBehaviour
 
         //needs to be                 some kind of checker whether all of the lights are initiated
 
-        InitialEnqueue(); //preparation of the lights at the beginning and a start of the sequence of events
-
+        
     }
     #region Private Functions
+    void InitialEnqueue()  //preparation of the lights at the beginning and a start of the sequence of events
+
+    {
+        //initialLampList = FindObjectsOfType<LampLight>();
+        foreach (LampLight lamp in initialLampList)
+        {
+            LampEnqueue(lamp);           
+        }
+    }
     private void LampSetupper() //is called at the start and then at the event calls
     {
         currentLampLight = lampQueue.Dequeue();  
@@ -45,6 +53,7 @@ public class LightManager : MonoBehaviour
                 {
                     CountersUpdate(-1);
                     currentLampLight.LightOn = 0;
+                currentLampLight.TimeDuration /= 2;
                 }
 
                 else
@@ -89,14 +98,8 @@ public class LightManager : MonoBehaviour
         }
     }
 
-    void InitialEnqueue()  
-    {
-        //initialLampList = FindObjectsOfType<LampLight>();
-        foreach (LampLight lamp in initialLampList)
-        {
-            LampEnqueue(lamp);           
-        }
-    }
+
+
     #endregion
 
     #region Public Functions
@@ -108,6 +111,16 @@ public class LightManager : MonoBehaviour
 
     #endregion
 
+    private void OnEnable()
+    {
+        EventManager.StartListening(gameData.MonstersSpawn, InitialEnqueue);
+    }
+    private void OnDisable()
+    {
+        EventManager.StopListening(gameData.MonstersSpawn, InitialEnqueue);
+        
+
+    }
 }
 
 

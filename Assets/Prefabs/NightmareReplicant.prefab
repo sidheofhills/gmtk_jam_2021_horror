@@ -206,8 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f1c2c5483774a4e91a66d4f42b415d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
-  numberOfReplicants: 3
+  numberOfReplicants: 4
   slipperyPefab: {fileID: 883184101411348928, guid: 34598fd933f59c947bd263b80e659114,
     type: 3}
 --- !u!114 &8278555344554367585

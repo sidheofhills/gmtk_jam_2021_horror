@@ -5,11 +5,11 @@ using UnityEngine.EventSystems;
 
 public class MonsterSlipperyBehaviour : MonsterParentClass
 {
-    
-    // gameData inherited from parent class
+
+    [SerializeField] private GameData gameData;
 
     private bool spectialBehaviourModOn;
-    [SerializeField] private float localTimer = 0.2f;
+    [SerializeField] private float localTimer = 0.1f;
     // to new position variables
     private float timeElapsed;
     //[SerializeField] private float lerpDuration = 0.5f;
@@ -21,37 +21,25 @@ public class MonsterSlipperyBehaviour : MonsterParentClass
     private void Awake()
     {
         spectialBehaviourModOn = false;
-       
-    }
-        private void Start()
-    {
         _rigidbody = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         initialColliderSize = boxCollider2D.bounds.size;
-
+       
     }
+
     private void FixedUpdate()
     {
         if (spectialBehaviourModOn && localTimer > 0) 
         {
-            SlipperyMod();
+            MoveByRandomVector();
             boxCollider2D.size = initialColliderSize * gameData.boxColliderExpandValue;
             //Debug.Log("slippery mod done");                
         }
         else
         {
-
+            
             boxCollider2D.size = initialColliderSize;
         }
-
-    }
-
-   
-    private void SlipperyMod()
-    {
-        //StartCoroutine(LerpToNewPosition());
-        MoveByRandomVector();
-        
 
     }
 
@@ -71,7 +59,7 @@ public class MonsterSlipperyBehaviour : MonsterParentClass
 
 
     #region To New Position Setup. Note:
-    private static Vector2 GetRandomDir2d()    // i use it only in this script so it's private. but in another project i might put it in a sep script and use it as a library
+    private static Vector2 GetRandomDir2d()    
     {
         return new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;   //left unityEngine in case i'll put it in a lib some day
     }

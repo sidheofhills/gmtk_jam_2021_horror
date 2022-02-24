@@ -40,16 +40,15 @@ public class LampLight : MonoBehaviour
 
         audioSpectrum = GetComponent<LightsAudioSpectrum>();
         spriteRenderer = GetComponentsInChildren<SpriteRenderer>();
+
         SpritesAlphaSwitcher(1);
-        
 
 
     }
 
     private void Update()
     {
-        //test
-
+        
         if (Flickering && LightOn==1)
         {
             FlickeringWithAudio();

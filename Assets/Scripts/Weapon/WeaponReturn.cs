@@ -5,14 +5,18 @@ using UnityEngine;
 public class WeaponReturn : MonoBehaviour
 {
 
-    private MonsterObjectPool_Advanced objectPool;
+    private WeaponObjectPool_Simple objectPool;
     public GameData gameData;
-    [SerializeField] private float secondsBeforeReturn = 1.5f;
+    [SerializeField] private float secondsToFadeOut = 1.0f;
+    private SpriteRenderer spriteRenderer;
 
-
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     void Start()
     {
-        objectPool = FindObjectOfType<MonsterObjectPool_Advanced>();
+        objectPool = FindObjectOfType<WeaponObjectPool_Simple>();
     }
 
     private void OnEnable()
@@ -22,9 +26,20 @@ public class WeaponReturn : MonoBehaviour
 
     private IEnumerator WaitingBeforeReturn()
     {
-        yield return new WaitForSeconds(secondsBeforeReturn);
+
+        // play dissolve animation
+        float time = 0;
+        Color startValue = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
+        Color endValue = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
+        while (time<secondsToFadeOut)
+        {
+            spriteRenderer.color = Color.Lerp(startValue, endValue, time / secondsToFadeOut);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        
+
         objectPool.ReturnGameObject(this.gameObject);  
 
-        //should use lerp for d=fade in fade out
     }    
 }

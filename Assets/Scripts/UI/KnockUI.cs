@@ -5,16 +5,16 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 
-public class KnockUI : MonoBehaviour
+public class KnockUI : MonoBehaviour  //не обязаьеьный скрипт  с исчезающей кнопкой
 {
     [SerializeField] private float animTime;
     [SerializeField] private GameObject container;
-    public static bool HeKnocked { get; private set; }
+    
 
     private void Awake()
     {
         container.gameObject.SetActive(true);
-        HeKnocked = false;
+        
         
     }
     
@@ -26,11 +26,10 @@ public class KnockUI : MonoBehaviour
     }
     private IEnumerator KnockEvent()
     {
-        Debug.Log("start waiting");
+        //cutScene On
+        
         yield return new WaitForSeconds(animTime);
-        Debug.Log("end waitung");
-        HeKnocked = true;
-    Debug.Log("sent trigger");
+        
         container.gameObject.SetActive(false);
 
     }

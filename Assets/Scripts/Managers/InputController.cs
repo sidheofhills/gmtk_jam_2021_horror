@@ -1,18 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class InputController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    private int curSceneNumber;
+    public GameData gameData;
+    private void Awake()
     {
+        curSceneNumber = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        //test
         
+
+        if (curSceneNumber == 1)
+        {
+            if (Input.anyKeyDown)
+            {
+                Debug.Log("skipping timeline placeholder");
+                EventManager.TriggerEvent(gameData.Skip);
+            }
+            
+        }
+
+        else if (curSceneNumber == 2)
+        {
+            EventManager.TriggerEvent(gameData.GameStart);
+        }
+
     }
+
 }

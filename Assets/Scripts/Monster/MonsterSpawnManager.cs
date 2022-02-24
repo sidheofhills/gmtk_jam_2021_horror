@@ -44,7 +44,7 @@ public class MonsterSpawnManager : MonoBehaviour
     }
     private IEnumerator SpawnLogic()
     {
-        if (KnockUI.HeKnocked)
+        if (gameData.startSpawn)
         {
             if(leftSide)
             {

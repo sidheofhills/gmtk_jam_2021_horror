@@ -36,7 +36,7 @@ public class MonsterObjectPool_Advanced : MonoBehaviour
     }
 
 
-    public GameObject CreateNewObject(GameObject gameObject)
+    private GameObject CreateNewObject(GameObject gameObject)
     {
         GameObject newGameObject = Instantiate(gameObject);
         newGameObject.name = gameObject.name;  //for better control over variety of objectLists

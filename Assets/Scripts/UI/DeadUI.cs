@@ -13,36 +13,46 @@ public class DeadUI : MonoBehaviour
     [SerializeField] private float endValue = 1.0f;
     [SerializeField] private float lerpTime;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        newGameHelper.alpha = 0.0f;
+        FadeIn(gameOverText);
+        FadeIn(newGameHelper, true);
+
+
+
+    }
 
     private void Update()
     {
+
+        //tmp !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if(Input.GetKeyDown(KeyCode.R))
         {
-            FadeIn();
-            
-            Glitch(newGameHelper);
+            FadeIn(gameOverText);
+            FadeIn(newGameHelper, true);
+
+
         }
     }
-    private void OnEnable()
+
+    public void FadeIn(CanvasGroup text, bool offset = false)
     {
-        Debug.Log("i'm enabled");
-        FadeIn();
         
-        Glitch(newGameHelper);
+        StartCoroutine(FadeText(text, startValue,endValue,lerpTime, offset));
     }
 
-    public void FadeIn()
+    public void FadeOut(CanvasGroup text, bool offset = false)
     {
-        StartCoroutine(FadeText(gameOverText, startValue,endValue,lerpTime));
+        StartCoroutine(FadeText( text, gameOverText.alpha, startValue,lerpTime, offset));
     }
-
-    public void FadeOut()
+    public IEnumerator FadeText(CanvasGroup text, float startValue, float endValue, float lerpTime, bool offset)
     {
-        StartCoroutine(FadeText(gameOverText, gameOverText.alpha, startValue,lerpTime));
-    }
-    public IEnumerator FadeText(CanvasGroup text, float startValue, float endValue, float lerpTime)
-    {
-        Debug.Log("starting to fade");
+        if(offset)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        
         float _timeStartedLerping = Time.time;
         float timeSinceStarted = Time.time - _timeStartedLerping;
         float percentageComplete = timeSinceStarted / lerpTime;
@@ -58,14 +68,7 @@ public class DeadUI : MonoBehaviour
             if (percentageComplete >= 1) break;
             yield return new WaitForEndOfFrame();
         }
-        Debug.Log("done");
-    }
-
-    private IEnumerator Glitch(CanvasGroup text)  //YET TO BE DONE BUT NOT NOW, SEE LINK https://www.youtube.com/watch?v=FgWVW2PL1bQ
-    {
-        text.alpha = 0; ;
-        yield return new WaitForSeconds(lerpTime);
-        text.alpha = 1* Random.Range(startValue, endValue);
+        
     }
 
 }

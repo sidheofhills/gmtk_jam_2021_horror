@@ -9,7 +9,10 @@ using System;
 public class GameData : ScriptableObject
 {
     [Header("Main Variables")]
-    public float enemyNum = 0;
+    
+    public float enemyNumKilled = 0;
+    public bool startSpawn = false;
+    public bool cutSceneDone = false;
     public GameObject selectedObject;
     public Vector3 weaponSpawnTransform;
     public float speed = 1;
@@ -31,7 +34,7 @@ public class GameData : ScriptableObject
     [HideInInspector] public string MainMenu { get; } = "gameMenuEvent";     
     [HideInInspector] public string Transition { get; } = "transitionEvent";     
     [HideInInspector] public string Skip { get; } = "gameSkipEvent";     
-    [HideInInspector] public string MonsterSpawn { get; } = "monsterSpawnEvent";    
+    [HideInInspector] public string MonstersSpawn { get; } = "monstersSpawnEvent";    
     [HideInInspector] public string Attack { get; } = "attackEvent";     
     [HideInInspector] public string MonsterDeath { get; } = "monsterDeathEvent";    
     [HideInInspector] public string OnMinute { get; } = "onMinuteEvent";    

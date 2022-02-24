@@ -41,16 +41,13 @@ public class MonsterSpawner : MonoBehaviour
         Vector2 newSpawnPoint = new Vector2(0, 0);
         
 
-        gameData.enemyNum += 1;
+        
 
-        //EventManager.TriggerEvent(gameData.MonsterSpawn); // EVENT TRIGGER  spawnEvent()
-
-        //Debug.Log("spaawned and triggered" + newObject.GetInstanceID());
 
         newSpawnPoint = position + UnityEngine.Random.insideUnitSphere * 2;
 
         newObject.transform.position = newSpawnPoint;
-        Debug.Log(newObject.transform.position +" is spawner of " + newObject.name + newObject.GetInstanceID());
+        //Debug.Log(newObject.transform.position +" is spawner of " + newObject.name + newObject.GetInstanceID());
         newObject.SetActive(true);
 
 

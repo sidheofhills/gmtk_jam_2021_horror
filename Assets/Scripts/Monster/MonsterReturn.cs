@@ -28,7 +28,7 @@ public class MonsterReturn : MonoBehaviour
         if (objectPool != null)
         {
             objectPool.ReturnGameObject(this.gameObject);
-            gameData.enemyNum -= 1;
+            EventManager.TriggerEvent(gameData.MonsterDeath);
             
         }
         
