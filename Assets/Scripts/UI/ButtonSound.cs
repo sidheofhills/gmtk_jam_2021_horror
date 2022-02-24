@@ -34,9 +34,7 @@ public class ButtonSound : MonoBehaviour
     }
 
     public void OnButtonStopFlickering()
-    {
-        
-        
+    {        
         audioSource.Stop();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(WeaponObjectPool_Simple))]
 public class WeaponSpawner : MonoBehaviour
 {
     private WeaponObjectPool_Simple objectPool;
@@ -13,15 +14,10 @@ public class WeaponSpawner : MonoBehaviour
     void Start()
     {
         objectPool = GetComponent<WeaponObjectPool_Simple>();
-        if (objectPool)
-        {
-            Debug.Log(objectPool.name);
-        }
-        else
-        {
-            Debug.Log("No game object called ObjectPool_Advanced found");
-        }
         
+        // in scriptable objects data is not updating with exiting a game 
+        // so it needs to be done manually
+        gameData.weaponSpawnTransform = new Vector3(0, 0, 0);
 
     }
 
@@ -30,10 +26,12 @@ public class WeaponSpawner : MonoBehaviour
     {
         GameObject newObject = objectPool.GetObject(); 
         newObject.transform.position = position;
-        newObject.transform.localScale = scale;              
-        
-            
-        
+        newObject.transform.localScale = scale;
+
+        EventManager.TriggerEvent(gameData.MonsterDeath);
+
+
+
         //play spawn animation
     }
   

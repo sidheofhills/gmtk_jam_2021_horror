@@ -8,12 +8,9 @@ public class ButtonSetHighlighted : MonoBehaviour
 {
     [SerializeField] GameObject nameContainer;
     private Button[] buttonList;
-    //private Button button;
+    
     private void Awake()
     {
-        
-        
-        //button = GetComponent<Button>();
         buttonList = nameContainer.GetComponentsInChildren<Button>();
     }
     

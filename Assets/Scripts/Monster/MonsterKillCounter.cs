@@ -9,13 +9,13 @@ public class MonsterKillCounter : MonoBehaviour
 
     private void Awake()
     {
+        GameData.enemyNumKilled = 0;
 
-        
     }
 
     private void KillCounter()
     {
-        gameData.enemyNumKilled++;
+        GameData.enemyNumKilled++;        
     }
 
     private void OnEnable()
@@ -28,9 +28,5 @@ public class MonsterKillCounter : MonoBehaviour
         EventManager.StopListening(gameData.MonsterDeath, KillCounter);
     }
 
-    public void ForceNumKillsNullify()
-    {
-        gameData.enemyNumKilled = 0;
-    }
 
 }

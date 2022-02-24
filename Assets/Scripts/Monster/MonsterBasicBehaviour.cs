@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class MonsterBasicBehaviour : MonsterParentClass
 {
+    public override void ClickToDeath()
+    {
+        base.ClickToDeath();
+    }
 
     private void OnMouseDown()
     {
         
-        ClickToDeath();
-        Debug.Log("basic mod done");
+        ClickToDeath();        
 
     }
 }

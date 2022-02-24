@@ -46,18 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 630078bf4f14eaa4ba7673c8216424db, type: 2}
   audioClips: {fileID: 11400000, guid: 85427a3c1b9bd15488bf9969a8c03344, type: 2}
-  basicPefab: {fileID: 1803856328440208922, guid: 727c35be5f3606c4eb0d20ebd72a9b25,
+  basicPrefab: {fileID: 1803856328440208922, guid: 727c35be5f3606c4eb0d20ebd72a9b25,
     type: 3}
-  slipperyPefab: {fileID: 883184101411348928, guid: 34598fd933f59c947bd263b80e659114,
+  slipperyPrefab: {fileID: 883184101411348928, guid: 34598fd933f59c947bd263b80e659114,
     type: 3}
-  replicantPefab: {fileID: 5840625428516900670, guid: 4390a3438f6ade5408b3a5cba8bc4f85,
+  replicantPrefab: {fileID: 5840625428516900670, guid: 4390a3438f6ade5408b3a5cba8bc4f85,
     type: 3}
-  slipperyNumber: 6
-  replicantNumber: 4
-  timeToSpawn: 5
+  leftSide: 1
+  mainPrefabSpawnCooldown: 2.5
+  additionalPrefabSpawnCooldown: 3
   spawnTimeReducer: 0.2
-  leftSide: 0
-  waitingOffsetTime: 0.5
+  waitingOffsetTime: 0.05
 --- !u!82 &6313643664589049191
 AudioSource:
   m_ObjectHideFlags: 0

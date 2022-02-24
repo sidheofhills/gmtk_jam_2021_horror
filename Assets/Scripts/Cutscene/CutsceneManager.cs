@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class CutsceneManager : MonoBehaviour
+public class CutsceneManager : MonoBehaviour  // cutscene in main level after the player pressed knock
 {
     private PlayableDirector cutScenePlayableDirector;
     public GameData gameData;
-    private void Awake()
+    private void Start()
     {
-        cutScenePlayableDirector = GetComponent<PlayableDirector>();
-        cutScenePlayableDirector.played += CutSceneDone;
+        cutScenePlayableDirector = GetComponent<PlayableDirector>();        
         cutScenePlayableDirector.stopped += CutSceneDone;
-        gameData.cutSceneDone = false;
+        gameData.cutSceneDone = false;        
     }
 
     public void OnKnock()
@@ -20,12 +19,14 @@ public class CutsceneManager : MonoBehaviour
         cutScenePlayableDirector.Play();
     }
 
-    private void OnSkip()
+    private void OnSkip() 
     {
         cutScenePlayableDirector.Stop();
     }
+    
     private void CutSceneDone(PlayableDirector cutScene)
     {
+        gameData.cutSceneDone = true;
         EventManager.TriggerEvent(gameData.MonstersSpawn);
     }
 
@@ -36,6 +37,7 @@ public class CutsceneManager : MonoBehaviour
     }
     private void OnDisable()
     {
+        cutScenePlayableDirector.stopped -= CutSceneDone;
         EventManager.StopListening(gameData.Skip, OnSkip);
     }
 

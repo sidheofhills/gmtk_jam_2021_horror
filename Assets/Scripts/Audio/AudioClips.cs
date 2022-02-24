@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Data/Audio/AudioClips", fileName = "newAudioClips")]
 public class AudioClips : ScriptableObject
 {
+    //collection of almost all music and sfx i used in the game.
+    // bg music in different scenes is not in the list, as well as normalm not flickering lightBulbs sounds
     
 
     [Header("BG Music")]
