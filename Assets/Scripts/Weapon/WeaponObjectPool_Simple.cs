@@ -30,7 +30,7 @@ public class WeaponObjectPool_Simple : MonoBehaviour
         if (myObjectPool.Count>0)
         {
             GameObject myObject = myObjectPool.Dequeue();
-            myObject.SetActive(true);
+            myObject.SetActive(true);            
             return myObject;
         }
 
