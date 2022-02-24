@@ -5,16 +5,26 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637751791847289787
     m_Hash: 930189859
+=======
+      ticks: 637733736488506486
+    m_Hash: 1956195925
+>>>>>>> main
   m_LockFileStatus:
     m_FilePath: D:/unity/games/gmtk_jam_2021/gmtk_jam_2021_horror/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637751791849224615
     m_Hash: 3434958605
+=======
+      ticks: 637733736489284368
+    m_Hash: 923030800
+>>>>>>> main
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -83,7 +93,10 @@ m_ResolvedPackages:
     - 3.2.11
     - 3.2.13
     - 3.2.14
+<<<<<<< HEAD
     - 3.2.15
+=======
+>>>>>>> main
     - 4.0.0
     - 4.0.1
     - 4.1.0
@@ -105,7 +118,10 @@ m_ResolvedPackages:
     - 5.0.7
     - 5.0.8
     - 5.0.9
+<<<<<<< HEAD
     - 5.0.10
+=======
+>>>>>>> main
     - 6.0.0-pre.1
     - 6.0.0-pre.2
     - 6.0.1
@@ -118,7 +134,10 @@ m_ResolvedPackages:
     - 7.0.0
     - 7.0.1
     - 7.0.2
+<<<<<<< HEAD
     - 7.0.3
+=======
+>>>>>>> main
     - 8.0.0-pre.3
     compatible:
     - 6.0.3
@@ -317,7 +336,10 @@ m_ResolvedPackages:
     - 4.1.0
     - 4.1.1
     - 4.1.2
+<<<<<<< HEAD
     - 4.1.3
+=======
+>>>>>>> main
     - 5.0.0-pre.1
     - 5.0.0-pre.2
     - 5.0.1
@@ -329,7 +351,10 @@ m_ResolvedPackages:
     - 6.0.0-pre.4
     - 6.0.0
     - 6.0.1
+<<<<<<< HEAD
     - 6.0.2
+=======
+>>>>>>> main
     - 7.0.0-pre.3
     compatible:
     - 5.0.3
@@ -519,7 +544,10 @@ m_ResolvedPackages:
     - 5.1.4
     - 5.1.5
     - 5.1.6
+<<<<<<< HEAD
     - 5.1.7
+=======
+>>>>>>> main
     - 6.0.0-pre.1
     - 6.0.0-pre.2
     - 6.0.0
@@ -701,10 +729,15 @@ m_ResolvedPackages:
     - 1.13.5
     - 1.14.1
     - 1.14.4
+<<<<<<< HEAD
     - 1.14.7
     - 1.15.1
     - 1.15.4
     - 1.15.7
+=======
+    - 1.15.1
+    - 1.15.4
+>>>>>>> main
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -727,10 +760,15 @@ m_ResolvedPackages:
     - 1.13.5
     - 1.14.1
     - 1.14.4
+<<<<<<< HEAD
     - 1.14.7
     - 1.15.1
     - 1.15.4
     - 1.15.7
+=======
+    - 1.15.1
+    - 1.15.4
+>>>>>>> main
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -4015,7 +4053,10 @@ m_ResolvedPackages:
     - 6.0.0-pre.4
     - 6.0.0
     - 6.0.1
+<<<<<<< HEAD
     - 6.0.2
+=======
+>>>>>>> main
     - 7.0.0-pre.3
     compatible:
     - 5.0.0

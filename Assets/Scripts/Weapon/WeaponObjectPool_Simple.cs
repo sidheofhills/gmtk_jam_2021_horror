@@ -8,7 +8,7 @@ public class WeaponObjectPool_Simple : MonoBehaviour
 
     [SerializeField] private GameObject myObjectPrefab;
     [SerializeField] private Queue<GameObject> myObjectPool = new Queue<GameObject>();
-    [SerializeField] private int poolStartSize = 7;
+    [SerializeField] private int poolStartSize = 5;
     // Start is called before the first frame update
     void Start()
     {     
@@ -37,7 +37,7 @@ public class WeaponObjectPool_Simple : MonoBehaviour
         else
         {            
             GameObject myObject = Instantiate(myObjectPrefab);
-           
+            
             return myObject;
         }
     }
