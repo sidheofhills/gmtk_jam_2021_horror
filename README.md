@@ -42,4 +42,5 @@ I also certainly wanted to complete this project and upload it on itch.io, speci
 
 
 
-**So please, welcome under the hood of my game and I hope you won't get lost there :)**
+**So please, welcome under the hood of my game) You're awaited in the [scripts folder](https://github.com/sidheofhills/gmtk_jam_2021_horror/tree/main/Assets/Scripts) :)**
+
