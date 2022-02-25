@@ -17,7 +17,7 @@ I also certainly wanted to complete this project and upload it on itch.io, speci
     - so I carefully watched after the details of which the game consists, like a little cutscene at the beguining, the lighting, the win-game/lose-game phrases and so on
  
 4. **A _well enough_ code base** that supports narrative. This was the most fun part of the work for me to do, because I had to made several systems for the game to look and feel just the way I wanted, some of which are:
-    - ***procedural animatiion*** of protective pentagram that switches its state. to do so I had to make a ***mathematical graph with several variables*** to feed it into Unity's AnimationCurve
+    - ***procedural animation*** of protective pentagram that switches its state. to do so I had to make a ***mathematical graph with several variables*** to feed it into Unity's AnimationCurve
     - ***state machine*** that switches ceiling lights on and off to make the scene spookier and monsters harder to kill
     - ***monster visibility system***, where the visibility of each monster's body depended on the state of the light they're under 
  
