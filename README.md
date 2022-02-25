@@ -36,7 +36,7 @@ I also certainly wanted to complete this project and upload it on itch.io, speci
 **All the things above are cool and teached me a lot about making a Unity projects, BUT, as it is only a study project, _it has lots of flaws_ too:**
 
   - My **main** but ineviteble in these circumstances **mistake** was ***the decision not to make any specific plans about this game***.
-  I did the game on the go so there're lots of technical desisions that are not in any way could be considered a clean code. Though I tried to avoid coupling and high coherency, I surely didn't followed most of the SOLID principles well enough due to lack of experience. To my defence my goal was not to make an *ideal* game, but *to make* one, learn from its mistakes and move on to make the next one better. 
+  I did the game on the go so there're lots of technical decisions that are not in any way could be considered as a clean code. Though I tried to avoid coupling and high coherency and divided my game into separate classes, I surely didn't followed most of the SOLID and OOP principles well enough due to lack of experience. To my defence my goal was not to make an *ideal* game, but *to make* one, learn from its mistakes and move on to make the next one better. 
   - ***The narrative*** side of things ***might be too subtle*** at times. For example,  there're 4 things that tells player that the game is going to end soon: the music, the candles, the pentagrams and the lights at the end. But because of the intensity of the gameplay, sadly, most of the clues are not that visible to the player.
   - And, of course, I ***could've used more of the Unity's own features*** and not to invent the wheel all over again.
 
