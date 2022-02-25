@@ -1,7 +1,7 @@
 # Exorcist Practice
 *Inspired by GMTK Jam 2021 "Joined together" theme*
 
-**Exorcist Practice**  is my first made game and it was made on **Unity 2021.1.11**. As I had almost no experience in C# and Unity before that I've decided not to overwhelm myself with project design and UML tables. 
+**Exorcist Practice**  is my first completed game and it was made on **Unity 2021.1.11**. As I had almost no experience in C# and Unity before that I've decided not to overwhelm myself with project design and UML tables. 
 I wanted this game to be my experimental ground where I could practice new things I've learned about C# and Unity. 
 I also certainly wanted to complete this project and upload it on itch.io, specificaly in **WebGL format** (which I did: [link to the game](https://sidheofhills.itch.io/exorcist-practice)).
 
