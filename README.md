@@ -22,7 +22,7 @@ I also certainly wanted to complete this project and upload it on itch.io, speci
     - ***monster visibility system***, where the visibility of each monster's body depended on the state of the light they're under 
  
 4. **The Art**, which works well with the narrative and music, making the atmosphere more well-tuned (this caused me some troubles though as I haven't used any Unity Lights to light the scene - it was all painted up in 2d)
-    - to made it well enough I've experimented with ***Camera Settings***, ***PostProcessing***, ***URP*** and ***Shaders***
+    - to made it well enough I've experimented with ***Camera Settings***, ***PostProcessing***, ***TextMesh Pro***, ***URP*** and ***Shaders***
 
 5. **A WebGL format** for people to be able to play the game in the browser easily 
     - to make the game run smoothely no matter how many monsters there're in the scene right at the moment and how fast the played kills them, I've made an ***ObjectPooling System***. It was **made from scratch** without using Unity's new feature of ObjectPooling, because at that time I didn't know about it
