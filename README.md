@@ -26,7 +26,7 @@ I also certainly wanted to complete this project and upload it on itch.io, speci
 
 5. **A WebGL format** for people to be able to play the game in the browser easily 
     - to make the game run smoothly no matter how many monsters there're in the scene right at the moment and how fast the played kills them, I've made an ***ObjectPooling System***. It was **made from scratch** without using Unity's new feature of ObjectPooling, because at that time I didn't know about it
-    - to optimize a little more (the game is a clicker that detects the position of the player's mouse and I had to use Colliders for it, which is Physics and *is* expensive) I've experimented with different types of ***Colliders***, ***RigidBody***'s options and such to make it cost less
+    - to optimize a little more (the game is a clicker that detects the position of the player's mouse and I had to use Colliders for it, which is Physics and *is* expensive) I've experimented with different types of ***Colliders***, ***RigidBody***'s options (in my case 2d once) and such to make it cost less
 
 6. **An Ending**. I really wanted to make a game that can be completed and, as my resources are not that big, therefore, short  
     - so I had to come up with a series of Events using ***Observer pattern*** linked with Time that lead to the Winning or Losing endings.
